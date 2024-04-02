@@ -1,6 +1,6 @@
 # Análise de Dados e Documentos Dinâmicos
 
-Bem vindo à página da disciplina **Análise de Dados e Documentos Dinâmicos**.
+Bem vindo à página da disciplina **Análise de Dados e Documentos Dinâmicos** (aka **Economia Social**).
 Nesta página, os alunos terão acesso a todos os materiais utilizados durante o semestre, como notas de aula (slides), listas de exercícios, dados e demais materiais de apoio.
 
 * Professor: Antonio Vinícius Barbosa
