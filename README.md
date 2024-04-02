@@ -1,4 +1,4 @@
-# Análise de Dados e Documentos Dinâmicos :rocket:
+# :rocket: Análise de Dados e Documentos Dinâmicos 
 
 
 
@@ -21,9 +21,10 @@ ii. Computar estatísticas descritivas dos dados;
 iii. Gerar visualização dos dados; e 
 iv. Criar relatórios, artigos, apresentações e páginas Web de forma dinâmica.
 
+## :arrow_forward: Slides
 
 
-## Links
+## :link: Links
 
 - [Christian Burkhart tips](https://twitter.com/ChBurkhart)
 - [Blog Curso-R](https://blog.curso-r.com/)
