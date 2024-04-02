@@ -1,4 +1,5 @@
-# Análise de Dados e Documentos Dinâmicos
+# Análise de Dados e Documentos Dinâmicos ![image](https://github.com/aviniciusbb/documentos_dinamicos/assets/5882557/a153250e-f579-4de5-8772-6726eaf93d59)
+
 
 Bem vindo à página da disciplina **Análise de Dados e Documentos Dinâmicos** (aka **Economia Social**).
 Nesta página, os alunos terão acesso a todos os materiais utilizados durante o curso, como notas de aula (*slides*), listas de exercícios, dados e demais materiais de apoio.
