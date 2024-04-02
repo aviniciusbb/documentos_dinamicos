@@ -1,18 +1,18 @@
 # Análise de Dados e Documentos Dinâmicos
 
 Bem vindo à página da disciplina **Análise de Dados e Documentos Dinâmicos** (aka **Economia Social**).
-Nesta página, os alunos terão acesso a todos os materiais utilizados durante o semestre, como notas de aula (slides), listas de exercícios, dados e demais materiais de apoio.
+Nesta página, os alunos terão acesso a todos os materiais utilizados durante o curso, como notas de aula (*slides*), listas de exercícios, dados e demais materiais de apoio.
 
 * Professor: Antonio Vinícius Barbosa
 
-* Laboratório I (CCSA) - 24N1234
+* Laboratório I (CCSA) - 24N234
 
 * e-mail: antoniobarbosa@ccsa.ufpb.br
 
 * [**Ementa**](https://github.com/aviniciusbb/documentos_dinamicos/blob/main/ementa/Ementa_MESP.pdf)
 
 
-Esta disciplina tem como proposta introduzir as principais técnicas computacionais para a leitura, manipulação, visualização e elaboração de documentos dinâmicos de maneira rápida e eficiente.  Além disso, este curso tem como objetivo ajudar a criar documentos reprodutíveis, tais como relatórios e apresentações. Ao final do curso, espera-se que o aluno seja capaz de: 
+Esta disciplina tem como proposta introduzir as principais técnicas computacionais para a leitura, manipulação, visualização e elaboração de documentos dinâmicos de maneira rápida e eficiente.  Além disso, tem como objetivo ajudar a criar documentos reprodutíveis, tais como relatórios e apresentações. Ao final do curso, espera-se que o aluno seja capaz de: 
 
 i. Ler e manipular dados; 
 ii. Computar estatísticas descritivas dos dados; 
