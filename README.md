@@ -9,7 +9,7 @@ Nesta página, os alunos terão acesso a todos os materiais utilizados durante o
 
 * e-mail: antoniobarbosa@ccsa.ufpb.br
 
-* Ementa
+* [**Ementa**](https://github.com/aviniciusbb/documentos_dinamicos/blob/main/ementa/Ementa_MESP.pdf)
 
 
 Esta disciplina tem como proposta introduzir as principais técnicas computacionais para a leitura, manipulação, visualização e elaboração de documentos dinâmicos de maneira rápida e eficiente.  Além disso, este curso tem como objetivo ajudar a criar documentos reprodutíveis, tais como relatórios e apresentações. Ao final do curso, espera-se que o aluno seja capaz de: 
