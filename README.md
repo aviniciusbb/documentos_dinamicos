@@ -1,4 +1,5 @@
-# Análise de Dados e Documentos Dinâmicos ![image](https://github.com/aviniciusbb/documentos_dinamicos/assets/5882557/a153250e-f579-4de5-8772-6726eaf93d59)
+# Análise de Dados e Documentos Dinâmicos ![image](https://github.com/aviniciusbb/documentos_dinamicos/assets/5882557/2034343d-9eb6-4bdf-8ec8-8ab4fbc04703)
+
 
 
 Bem vindo à página da disciplina **Análise de Dados e Documentos Dinâmicos** (aka **Economia Social**).
