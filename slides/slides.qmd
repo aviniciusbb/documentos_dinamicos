@@ -4,6 +4,7 @@ subtitle: Tópico I - Comandos Básicos
 format: thinkridentity-revealjs
 author: Antonio Vinícius Barbosa
 date: last-modified
+from: markdown+emoji
 ---
 
 
@@ -79,7 +80,7 @@ h
 ```
 
 
-## Regra de etiqueta :bookmark:  (1)
+## Regra de etiqueta :bookmark: 
 
 Na maior parte do tempo, usuários do `R` utilizam apenas o operador `<-` para 
 atribuições, enquanto o símbolo de igualdade (`=`) é reservado para indicar os argumentos dentro de uma função.   
@@ -95,9 +96,6 @@ media <- mean(x = 1:10)
 ```
 
 
-## Portanto, para atribuições
-
-![](Images/assigment.jpg){fig-align="center" width="400"}
 
 ## Atribuições
 
@@ -153,7 +151,7 @@ ls()
 ```
 
 
-# <font color="1b5299"> Pacotes 📦 </font> {background-color="#BBDEF0"}
+# Pacotes 📦 
 
 ## Pacotes no `R`
 
@@ -185,43 +183,18 @@ library(PoEdata)
 library(dplyr)
 ```
 
-## Mesma função, diferentes pacotes...
 
-Em algumas situações, uma função com o mesmo nome pode estar vinculada a diferentes pacotes. Neste caso, utilizamos o símbolo `::`, como em `pacote::funcao()`.
-
-```{r, eval=FALSE, echo = TRUE}
-# A função filter() em dois pacotes distintos
-dplyr::filter()
-stats::filter()
-```
-
-Dessa forma, evitamos confusão quanto ao uso de funções homônimas.
-
-
-## Removendo variáveis e pacotes
-
-
-A função `rm(list = ls())` remove todos os objetos em uso na memória,
-mas mantém os pacotes carregados. Para limpar todo o ambiente, devemos reiniciar
-a seção:
-
-
-- `Seção > Reiniciar Seção`
-- Ou através das teclas de atalho `Crtl + Shift + F10`
-
-
-
-# <font color="1b5299"> Estruturas de dados </font> {background-color="#BBDEF0"}
+# Estruturas de dados 
 
 Veremos as principais estruturas de dados do `R`:
 
 ::: {.incremental}
-- Vetores
-- Matrizes
-- Data frames
-- Listas
+- **Vetores**
+- **Matrizes**
+- **Data frames**
+
 :::
-# <font color="1b5299"> Vetores </font> {background-color="#BBDEF0"}
+#  Vetores 
 
 ## Criando vetores
 
@@ -392,7 +365,6 @@ Equivale a soma de `c(1, 2, 3, 1, 2) + c(2, 4, 6, 8, 10)`
 
 ## Regras de Etiqueta :bookmark: (2)
 
-Nome de objetos:
 
 - Nome de objetos em minúsculo
 - Utilize `_` para separar palavras no nome dos objetos
@@ -509,19 +481,6 @@ x <- 1:10
 x[x < 5 | x > 8]
 ```
 
-## Selecionando elementos em um vetor
-
-É possível selecionar elementos por nome, através da função `names()`
-
-```{r, echo = TRUE, collapse = TRUE}
-# Dados de receita
-receita <- c(4.392, 4.540, 4.827, 5.187, 5.652)
-names(receita) <- 2014:2018
-receita
-receita["2017"]
-receita[as.numeric(names(receita)) >= 2016]
-```
-
 
 ## Regras de Etiqueta :bookmark:  (3)
 
@@ -557,7 +516,7 @@ countdown::countdown(
 )
 ```
 
-# <font color="1b5299"> Matrizes </font> {background-color="#BBDEF0"}
+#  Matrizes
 
 ## Matrizes
 
@@ -682,4 +641,54 @@ t(contas_matriz)
 countdown::countdown(
   minutes = 10
 )
+```
+
+# Data Frames
+
+## Data frames
+Um **data frame** é uma das estruturas mais importantes para armazanamento de dados. Equivale, de certa forma, às *planilhas eletrônicas* com linhas e colunas. 
+
+
+* Um data frame é um conjunto de vetores de mesmo tamanho;
+* Cada **linha** representa informações para uma única unidade de observação
+* Cada **coluna** representa uma característica observada das unidades;
+* Elementos da mesma coluna devem ser do mesma classe.  
+
+![](images/data_frame.png){fig-align="center"}
+
+
+## Data frames
+
+É possível criar, carregar (dados dos pacotes) ou ler arquivos diretamente no `R`. Para criar um data frame, fazemos:
+
+```{r, echo = TRUE, collapse = TRUE}
+alunos_ufpb <- data.frame(
+  aluno = c("José", "Maria", "Pedro", "Carla", "Isabel"),
+  economia = c(1, 0, 0, 1, 1),
+  periodo = c(3, 4, 7, 2, 3),
+  cra = c(7.34, 8.45, 8.05, 7.98, 9.03)
+  )
+
+alunos_ufpb
+```
+
+## Data frames
+
+Para carregar dados dos pacotes, fazemos:
+
+```{r, echo = TRUE, collapse = TRUE}
+#install.packages("dados")
+head(dados::dados_gapminder)
+```
+
+## Data frames
+
+Algumas características dos dados:
+
+```{r, echo = TRUE, collapse = TRUE}
+# Estrutura dos dados
+str(dados::dados_gapminder)
+
+# Listar variaveis
+names(dados::dados_gapminder)
 ```
