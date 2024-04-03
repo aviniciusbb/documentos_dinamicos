@@ -25,6 +25,8 @@ Esta disciplina tem como proposta introduzir as principais técnicas computacion
 
 ## :arrow_forward: Slides
 
+2. [**R Básico**](https://raw.githack.com/aviniciusbb/documentos_dinamicos/slides/slides.html)
+
 
 ## :link: Links
 
