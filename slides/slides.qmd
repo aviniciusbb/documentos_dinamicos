@@ -8,9 +8,39 @@ from: markdown+emoji
 ---
 
 
-# Como o `R` funciona? 
+# Utilizando o `R` 
+
+## Por que utilizar o `R`?
+
+* Gratuito
+* CRAN com mais de 10.000 \textit{pacotes}
+* Comunidade ativa e colaborativa
+* Versatilidade: manipulação de dados, modelagem estatística, gráficos
+* Integrabilidade
+
+## `R` no Windows
+
+![](images/R_windows.png){fig-align="center" width="400"}
 
 
+
+## Ambientes de desenvolvimento integrado (IDE)
+
+* A forma mais conveniente de utilizar o `R` é através de uma interface gráfica através de janelas.
+* É possível interagir com o sistema através do \textit{shell prompt}, embora requeira maior conhecimento do usuário.
+* O desenvolvimento de Ambientes de Desenvolvimento Integrado (IDE) tem como objetivo facilitar a interação entre o usuário e o sistema.  
+
+
+## RStudio
+
+![](images/RStudio-Logo-Flat.png){fig-align="center" width="300"}
+
+RStudio é um conjunto eficiente de ferramentas integradas [https://posit.co/](https://posit.co/)
+
+
+## RStudio
+
+![](images/rstudio_example.png){fig-align="center" width="400"}
 
 ## R Básico
 
