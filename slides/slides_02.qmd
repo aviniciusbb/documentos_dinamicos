@@ -1,6 +1,6 @@
 ---
 title: Análise de Dados e Documentos Dinâmicos
-subtitle: Tópico I - Comandos Básicos
+subtitle: Tópico II - Leitura de Dados
 format: thinkridentity-revealjs
 author: Antonio Vinícius Barbosa
 date: last-modified
@@ -8,539 +8,85 @@ from: markdown+emoji
 ---
 
 
-# Utilizando o `R` 
+## Manipulação de Dados
 
-## Por que utilizar o `R`?
 
-* Gratuito
-* CRAN com mais de 20.000 \textit{pacotes}
-* Comunidade ativa e colaborativa
-* Versatilidade: manipulação de dados, modelagem estatística, gráficos
-* Integrabilidade
+> (…) o fato da **Ciência de Dados** existir como uma área se deve a uma falha colossal da estatística. Para mim, o que eu faço é o que é a estatística. É obter *insights* a partir dos dados utilizando modelagem e visualização. (Hadley Wickham)
 
-## `R` no Windows
-
-![](images/R_windows.png){fig-align="center" width="400"}
+![](images/data_wrangling.jpg){fig-align="center" width="400"}
 
 
 
-## Ambientes de desenvolvimento integrado (IDE)
+## Manipulação de Dados
 
-* A forma mais conveniente de utilizar o `R` é através de uma interface gráfica através de janelas.
-* É possível interagir com o sistema através do `shell prompt`, embora requeira maior conhecimento do usuário.
-* O desenvolvimento de Ambientes de Desenvolvimento Integrado (IDE) tem como objetivo facilitar a interação entre o usuário e o sistema.  
+- A manipulação de dados refere-se à **transformação de dados** em informação relevante.
+- Parte de uma base "crua" e a transforma até obter uma base de dados analítica.
 
-
-## RStudio
-
-![](images/RStudio-Logo-Flat.png){fig-align="center" width="300"}
-
-RStudio é um conjunto eficiente de ferramentas integradas [https://posit.co/](https://posit.co/)
+![](https://livro.curso-r.com/assets/img/environmental-data-science-r4ds-general.png){fig-align="center" width="600"}
 
 
-## RStudio
+## Manipulação de Dados
 
-![](images/rstudio_example.png){fig-align="center" width="400"}
+![](https://pbs.twimg.com/media/CwVwtGzUUAAM5x0.jpg){fig-align="center" width="400"}
 
-# Como o `R` funciona?
+## Manipulação de Dados
 
-## R Básico
-
-A forma mais simples de se utilizar o `R` é através de operações básicas:
-
-```{r, echo = TRUE, collapse = TRUE}
-#| code-line-numbers: "|1-2|3-4|5-6|7-8"
-2 + 2
-sqrt(81)
-pi
-print("Olá, mundo!")
-```
-
-Neste caso, o `R` executa a operação e retorna seu valor na tela.
-
-
-## Operações básicas
-
-```{r, echo = TRUE, collapse = TRUE}
-# Adicao
-23 + 4
-
-# Subtracao
-13 - 5
-
-# Multiplicao
-9 * 7
-
-# Divisao
-10/3
-
-# Exponeciacao
-2^5
-
-# Raiz quadrada
-sqrt(16)
-
-# Arredondar
-round(pi, 2)
-
-# Logaritmo (base e)
-log(10)
-
-# Logaritmo (outras bases)
-log(10, 10)
-```
+O objetivo desta aula é introduzir os principais pacotes e funções para **importar dados** 
+para o `R`.
 
 . . .
 
-O símbolo `#` é utilizado para adicionar comentários ao código.
+::: {.callout-note appearance="simple"}
+
+## Antes de começar...
+
+- É necessário ter acesso aos dados e conhecer o seu formato.
+- Os dados podem estar salvos tanto localmente, em um servidor remoto ou em uma página web.
+- Uma boa prática é evitar salvar um banco de dados com nomes separados por espaços.
+- Evite símbolos especiais no nome dos diretórios ou arquivos, tais como `?$%^&(){}[]<>/...`
+
+:::
 
 
-## Salvando valores em objetos
-
-- Ao executar uma **expressão** seu valor é gerado, mas não armazenado. 
-- Uma **atribuição**, por outro lado, salva o valor em um **objeto** (ou *variável*).
-- É, normalmente, feito através do operador especial `<-`
-- Além do operador `<-`, atribuições podem ser feitas através `=`
-
-```{r, echo = TRUE, collapse = TRUE}
-# Lados do triângulo 
-a <- 3
-b <- 4
-# Obter o tamanho da hipotenusa
-h = sqrt(a^2 + b^2)
-h
-```
-
-
-## Regra de etiqueta :bookmark: 
-
-Na maior parte do tempo, usuários do `R` utilizam apenas o operador `<-` para 
-atribuições, enquanto o símbolo de igualdade (`=`) é reservado para indicar os argumentos dentro de uma função.   
-
-```{r, echo = TRUE, collapse = TRUE}
-# Ruim :( 
-valor = 10
-media = mean(x = 1:10)
-
-# Bom :) 
-valor <- 10
-media <- mean(x = 1:10)
-```
-
-
-
-## Atribuições
-
-Os objetos criados são armazenados na memória e atualizados a cada nova atribuição:
-
-```{r, echo = TRUE, collapse = TRUE}
-# Massa em kg
-massa_kg <- 80
-# Altura em m
-altura <- 1.83
-# Calcular IMC
-imc <- massa_kg/(altura^2)
-imc
-```
-
-## 🚀 Quizz \#1 {.inverse background-color="#386FA4"}
-
-- Crie a variável `renda_dom` para armazenar o valor da renda total aproximada do seu domicílio.
-- Agora, atribua à variável `n_pessoas` o número de pessoas que moram no seu domicílio.
-- Calcule a renda domiciliar per capita e atribua à variável `renda_pc`.
-
-```{r, echo = FALSE, collapse = TRUE}
-countdown::countdown(
-  minutes = 3
-)
-```
-
-## Gerenciando objetos
-
-Para listar todos os objetos armazenados na memória, basta utilizar a função `ls()`
-
-```{r, echo = FALSE}
-rm(list=ls())
-```
-
-```{r, echo = TRUE, collapse = TRUE}
-# Criar objetos
-p <- pi
-e <- exp(1)
-r <- sqrt(2)
-
-# Listar objetos
-ls()
-```
-
-. . . 
-
-Para excluir ou remover um objeto, utilizamos a função `rm()`
-
-```{r, echo = TRUE, collapse = TRUE}
-rm(e)
-ls()
-```
-
-
-# Pacotes 📦 
-
-## Pacotes no `R`
-
-Um **pacote** é um conjunto de funções que servem para uma dada finalidade. Cada pacote possui uma documentação própria explicando sua funcionalidade e exemplos de uso.
-
-![](images/library.jpg){fig-align="center"}
-
-## Pacotes no `R`
-
-Para instalar um pacote específico no `R`, fazemos:
-
-```{r, eval=FALSE, echo = TRUE}
-# Pacotes do repositorio oficial (CRAN)
-install.packages("dplyr")
-install.packages("remotes")
-
-# Pacotes externos
-remotes::install_github("https://github.com/ccolonescu/PoEdata")
-```
-
-
-. . .
-
-
-Uma vez instalado, não é necessário reinstalar a cada uso. No entanto, para utilizar as funcionalidades de um pacote é necessário carregá-lo sempre que a sessão for iniciada:
-
-```{r, eval=FALSE, echo = TRUE}
-library(PoEdata)
-library(dplyr)
-```
-
-
-# Estruturas de dados 
-
-Veremos as principais estruturas de dados do `R`:
+## Organizando o diretório de trabalho
 
 ::: {.incremental}
-- **Vetores**
-- **Matrizes**
-- **Data frames**
-
-:::
-#  Vetores 
-
-## Criando vetores
-
-A construção de vetores (conjunto de valores) é feito através do operador `c()`:
-
-```{r, echo = TRUE, collapse = T}
-#| code-line-numbers: "|1-4|1-8|1-12|1-16"
-# Características dos participantes
-idade <- c(19, 21, 23, 24, 25, 31, 33)
-idade
-
-sexo <- c("M", "M", "F", "F", "M", "F", "M")
-sexo
-
-aluno_econ <- c(TRUE, FALSE, FALSE, TRUE, TRUE, T, F)
-aluno_econ
-
-cra <- c(8.26, 7.18, 8.02, 7.33, 6.79, 9.45, 7.65)
-cra
-```
-
-## Classes
-
-Para determinar a classe de um vetor, utilizamos a função `class()`
-
-```{r, echo = TRUE, collapse = TRUE}
-class(idade)
-class(sexo)
-class(aluno_econ)
-class(cra)
-```
-
-As classes definem a forma de **armazenamento** na memória. Por exemplo, um vetor de números inteiros requer menos espaço de armazenamento do que os vetores numéricos.
-
-## Classes
-
-Para converter manualmente (quando possível) a classe de um vetor, utilizamos as funções `as.character()`, `as.numeric()`, `as.integer()` e `as.logical()`:
-
-```{r, echo = TRUE, collapse = TRUE}
-# Modificando classes de vetores
-as.integer(idade)
-
-as.numeric(aluno_econ)
-
-as.character(cra)
-```
-
-## Combinando vetores
-
-Ao combinar dois vetores de classes distintas, o `R` **converte** os elementos para torná-los comparáveis:
-
-```{r, echo = TRUE, collapse = TRUE}
-# Combinando vetores
-v1 <- c(1, 2, 3)
-v2 <- c("a", "b", "c")
-v3 <- c(v1, v2)
-v3
-class(v3)
-```
-
-. . .
-
-O novo vetor é formado unicamente por caracteres. Portanto, vetores no `R`
-são formado com elementos de uma única classe.
-
-
-## Operação com vetores
-
-Considere o vetor `cra`. Podemos fazer algumas operações básicas, tais como:
-
-```{r, echo = TRUE, collapse = TRUE}
-# Vetor 
-cra <- c(8.26, 7.18, 8.02, 7.33, 6.79, 9.45, 7.65)
-
-# Média de cra
-mean(cra)
-
-# Variância 
-var(cra)
-```
-
-## Operação com vetores
-
-A função `summary()` apresenta um conjunto de estatísticas básicas sobre um vetor:
-
-```{r, echo = TRUE, collapse = TRUE}
-summary(cra)
-```
-
-Para obter o tamanho de um vetor, utilizamos a função `length()`:
-
-```{r, echo = TRUE, collapse = TRUE}
-length(cra)
-```
-
-## Outras operações com vetores
-
-```{r, echo = TRUE, collapse = TRUE}
-# Valor mínimo  
-min(cra) 
-
-# Valor máximo
-max(cra)
-
-# Soma dos elementos 
-sum(cra)
-
-# Soma acumulada dos elementos 
-cumsum(cra)
-
-# Multiplicação por um escalar
-2 * cra
-```
-
-## Operação com vetores 
-
-Outras operações básicas com vetores:
-
-```{r, echo = TRUE, collapse = TRUE}
-# Operações entre vetores 
-a <- c(1, 2, 3, 4)
-b <- c(4, 3, 2, 1)
-
-a + b
-
-a - b
-
-a * b
-```
-
-## Operação com vetores
-
-Algumas destas operações não funcionam quando existem **elementos faltantes** (representados por `NA`)
-
-```{r, echo = TRUE, collapse = TRUE}
-valores_na <- c(21, 34, NA, 17, 25)
-mean(valores_na)
-sd(valores_na)
-```
-
-Neste caso, devemos *remover* os dados faltantes da seguinte forma:
-
-```{r, echo = TRUE, collapse = TRUE}
-mean(valores_na, na.rm = TRUE)
-sd(valores_na, na.rm = T)
-```
-
-## Reciclagem dos elementos dos vetores
-
-Podemos fazer operações com vetores de diferentes tamanhos. No entanto, o R
-utiliza um regra de reciclagem dos seus elementos:
-
-```{r, echo = TRUE, collapse = TRUE}
-# Criando vetores
-j <- c(1, 2, 3)
-k <- c(2, 4, 6, 8, 10)
-# Somar vetores de tamanhos distintos
-soma <- j + k
-soma
-```
-
-. . .
-
-::: {.callout-note}
-Equivale a soma de `c(1, 2, 3, 1, 2) + c(2, 4, 6, 8, 10)`
+- O **diretório de trabalho** (ou *workspace*) nada mais é do que a pasta no qual inserimos o conteúdo de um projeto.
+- Uma boa prática é criar uma pasta para cada projeto 
+- Uma vez criado o diretório de trabalho, devemos indicar ao `R` qual o caminho até esta pasta
 :::
 
+## Organizando o diretório de trabalho
 
-## Regras de Etiqueta :bookmark: (2)
+```{r,  eval = FALSE, echo = TRUE, collapse = TRUE}
+# Conhecendo o diretório de trabalho
+getwd()
 
+# Definindo o diretório de trabalho
+setwd("C:/Users/aviniciusbb/Documentos/ICDR") # No Windows
+setwd("/home/aviniciusbb/Documentos/ICDR") # No Linux ou Mac
 
-- Nome de objetos em minúsculo
-- Utilize `_` para separar palavras no nome dos objetos
-- Evite separar por . ou utilizar o formato `CamelCase`
-- Use nomes informativos para os objeto
-- Não faça reuso do nome dos objetos em uma mesma análise
-
-```{r, collapse = TRUE, eval = FALSE}
-# Bom :)
-empregados_admitidos_2022
-
-# Ruim :(
-num.emp.adm.2022
-NumeroEmpregadosAdmitidos2022
-EMP_2_2022
+# Listar objetos no diretório (duas opções)
+list.files()
+dir() 
 ```
 
+## Preparando o Diretório de Trabalho
+
+É possível definir no `RStudio` através da sequência:
+
+`Session > Set Working Directory > Choose Directory` 
+
+![](https://www.lampada.uerj.br/arquivosdb/_book2/imagens/sessao/setDiretorioCorrente.png){fig-align="center" width="300"}
 
 
-## Sequências
+## Quizz \#1 {.inverse background-color="#386FA4"}
 
-O `R` possui algumas funcionalidades para gerar sequências numéricas:
-
-
-```{r, echo = TRUE, collapse = TRUE}
-# Sequencias
-1:7
-
-seq(from = 1, to = 10, by = 2)
-
-letters[1:8] 
-
-rep(2, times = 5)
-
-rep(c(6, 7), each = 3)
-```
-
-## Operações lógicas
-
-O `R` possui **dois** valores lógicos, `TRUE` e `FALSE`. Os operadores de comparação entre dois objetos são: 
-
-- `==` &nbsp; igual  
-- `!=` &nbsp; diferente
-- `<` &nbsp; menor que
-- `>` &nbsp; maior que 
-- `<=` &nbsp; menor ou igual que
-- `>=` &nbsp; maior ou igual que
-
-
-## Operações lógicas
-
-Seguem alguns exemplos de como são feitas as comparações entre dois valores: 
-
-```{r, echo = TRUE, collapse = TRUE}
-# Operacoes logicas
-4 >= 3
-
-"a" == "A"
-
-c(12, 4) != c(12, 5)
-
-4 < pi
-```
-
-## Selecionando elementos em um vetor
-
-Para selecionar um ou mais elementos de um vetor, utilizamos o operador `[ ]`
-
-```{r, echo = TRUE, collapse = TRUE}
-# Vetor com informacoes de receita (em mil reais)
-receita <- c(43.9, 45.4, 48.2, 51.8, 56.5)
-
-# Selecionar o primeiro elemento
-receita[1]
-
-# Selecionar uma sequência de elementos
-receita[3:5]
-```
-
-
-## Selecionando elementos em um vetor
-
-Para exluir elementos do vetor, utilizamos o sinal `-` antes do indexador da posição
-
-```{r, echo = TRUE, collapse = TRUE}
-# Excluir o primeiro elemento
-receita[-1]
-
-# Excluir uma sequência de elementos
-receita[-c(3:5)]
-
-# Excluir o último elemento
-receita[-c(length(receita))] 
-```
-
-## Selecionando elementos em um vetor
-
-Podemos utilizar operações lógicas para selecionar elementos em um vetor
-
-```{r, echo = TRUE, collapse = TRUE}
-#| code-line-numbers: "1|1-5|1-8|1-12|1-17"
-valores <- c(13, 18, 25, 7, NA, 36)
-
-# Selecao de elementos
-valores[valores > 15]
-
-valores[!is.na(valores)]
-
-# Interseção (E)
-valores[!is.na(valores) & valores > 15]
-
-# União (OU)
-x <- 1:10
-x[x < 5 | x > 8]
-```
-
-
-## Regras de Etiqueta :bookmark:  (3)
-
-<h2><font color="736f72"> Espaçamento </font> </h2>
-
-- É uma boa prática colocar um espaço antes e depois de cada operador fixo (`=`, `+`, `-`, `<-`, etc)
-- Sempre coloque um espaço após a vírgula e nunca antes (como no português escrito). 
-
-```{r, echo = TRUE, collapse = TRUE}
-# Bom :)
-idade <- c(19, 21, 23, 24, 25, 31, 33)
-media_idade <- mean(idade, na.rm = TRUE)
-
-# Ruim :(
-idade<-c(19 ,21,23 ,24,25 ,31 ,33)
-media_idade<-mean(idade,na.rm=TRUE)
-```
-
-## 🚀 Quizz \#2 {.inverse background-color="#386FA4"}
-
-Considere o vetor `lista_vegana <- c("maca", "banana", "laranja", "kiwi", "batata", "brocolis")`
-
-- Quantos elementos o vetor `lista_vegana` possui?
-- Qual a classe do vetor?
-- Selecione o elemento `laranja`
-- Selecione apenas os vegetais utilizando a condição `|`
-- Exclua o elemento `kiwi` baseado na sua posição no vetor
-- Adicione `tomate` ao vetor.
+- Crie um diretório no seu computador para os exercícios da aula.
+- Verifique o seu diretório de trabalho.
+- Mude o diretório de trabalho para o diretório que você criou.
+- Salve todos os arquivos de dados da aula no diretório criado.
+- Verifique o conteúdo do diretório.
 
 ```{r, echo = FALSE, collapse = TRUE}
 countdown::countdown(
@@ -548,183 +94,575 @@ countdown::countdown(
 )
 ```
 
-#  Matrizes
 
-## Matrizes
+## Caminho absoluto vs. Caminho relativo
 
-Uma **matriz** é simplesmente um vetor com **dimensões**. Para entender o conceito de matrizes,
-considere um vetor único com receita e despesa de três municípios:
+Existem duas maneiras de definir caminhos para um arquivo ou diretório - **caminhos absolutos** e **caminhos relativos**.
+
+- Um **caminho relativo** especifica um local a partir do local atual.
+
+- Um **caminho absoluto** especifica um local da raiz do sistema de arquivos.
+
+```{r,  eval = FALSE, echo = TRUE, collapse = TRUE}
+# Caminho absoluto
+"/home/aviniciusbb/Documents/ICDR/Data/meu_arquivo.csv"
+
+# Caminho relativo
+setwd("/home/aviniciusbb/Documents/ICDR/") 
+"Data/meu_arquivo.csv"      
+```
+
+
+# Criando projetos no `RStudio`
+
+## Projetos no `RStudio`
+
+- Um **projeto** corresponde simplesmente a uma pasta no qual todos os elementos 
+todos os arquivos estão associados: dados, documentos, imagens, scripts, ...
+- O `RStudio` possibilita a criação de um ambiente que permite o uso mais integrado
+desses elementos.
+- Consiste na criação de um arquivo `.Rproj` dentro de um diretório de trabalho
+- É, também, uma maneira mais simples de evitar ajustar o diretório de trabalho sempre
+que começamos uma nova tarefa
+
+![](https://ficheiros.com.br/assets/img/icons/files/128/rproj-10013.png){fig-align="center" width="600"}
+
+## Projetos no `RStudio`
+
+A estrutura básica de um projeto é apresenta na árvore abaixo:
+
+![](https://i1.wp.com/raw.githubusercontent.com/martinctc/blog/master/images/RPROJECT_2000dpi.png?w=578&ssl=1){fig-align="center" width="600"}
+
+
+## Projetos no `RStudio`
+
+Para criar um novo projeto, fazemos:
+
+`File > New Project`
+
+![](https://d33wubrfki0l68.cloudfront.net/87562c4851bf4d0b0c8415dc9d6690493572e362/a6685/screenshots/rstudio-project-1.png){fig-align="center" width="300"}
+
+
+## Projetos no `RStudio`
+
+Em seguida, indicamos o tipo específico de projeto. Em geral, criamos um projeto 
+em um novo diretório
+
+![](https://d33wubrfki0l68.cloudfront.net/0fa791e2621be297cb9c5cac0b2802223e3d7714/57d89/screenshots/rstudio-project-2.png){fig-align="center" width="300"}
+
+## Projetos no `RStudio`
+
+Por fim, damos um nome ao projeto (diretório) e indicamos onde estará localizado no computador:
+
+![](https://d33wubrfki0l68.cloudfront.net/dee6324df1f5c5121d1c1e9eed822ee52c87167b/1f325/screenshots/rstudio-project-3.png){fig-align="center" width="300"}
+
+## Projetos no `RStudio`
+
+- É possível navegar entre projetos através do ícone do lado direito superior
+- Os arquivos apresentados no painel referem-se aos arquivos do diretório onde o projeto foi criado
+- Todos os caminhos dentro de um projeto são **relativos**!
+- Os arquivos e scripts previamente utilizados são restaurados ao abrir um projeto 
+
+
+# Leitura (importação) de Dados 
+
+## O pacote `readr`
+
+O pacote `readr` oferece algumas funcionalidades que facilitam a leitura
+de dados no formato **retangular**
+
+![](images/logo_readr.png){fig-align="center" width="400"}
+
+
+## O pacote `readr`
+
+As principais funções são:
+
+- `read_delim()`: arquivos separados por **qualquer** delimitador
+- `read_csv()`: arquivos separados por vírgula
+- `read_csv2()`: arquivos separados por ponto-e-vírgula
+- `read_tsv()`: arquivos delimitados por `Tab` 
+- `read_fwf()`: arquivos com colunas de tamanho fixo
+- `read_table()`: arquivos delimitados por espaço em branco
+
+. . . 
+
+> De forma geral, todas as funções são casos especiais da função geral `read_delim()`
+
+## Alguns exemplos
+
+O arquivo abaixo apresenta delimitação por `Tabs` 
+
+
+![](images/tsv_example.png){fig-align="center" width="400"}
+
+## Alguns exemplos
+
+O arquivo abaixo apresenta delimitação por vírgulas (*comma separated values* - CSV)
+
+![](http://www.yohz.com/blogs/wp-content/uploads/2020/05/eea_csv_dates01.png){fig-align="center" width="400"}
+
+## Alguns exemplos
+
+O arquivo abaixo apresenta delimitação por ponto e vírgula (;)
+
+![](https://ceweb.br/guias/dados-abertos/assets/img/png/image18.png){fig-align="center" width="400"}
+
+## Ler arquivos `.txt` ou `.csv`
+
+Arquivos `.txt` são arquivos padrões de texto, enquanto que arquivos `.csv` são arquivos geralmente separados por vírgula (,) ou ponto-e-vírgula (;).
+
+![](Images/read_txt_csv.png){fig-align="center" width="400"}
+
+A função a ser utilizada para ler os dados depende da forma em que as variáveis estão 
+**delimitadas**.
+
+
+## Importar arquivos `.txt`
+
+Para arquivos `.txt` simples, utilizamos a função básica `read_delim()`:
+
+```{r, eval = FALSE, echo = TRUE, collapse = TRUE}
+# Sintaxe da funcao 
+library(readr)
+meus_dados <- read_delim(file = "meu_arquivo.txt")
+```
+
+## Ler arquivos .txt ou .csv
+
+Alguns argumentos da função são:
+
+- `delim`: indica qual o caracter usado para separar as colunas.
+- `col_names` = `TRUE` ou `FALSE`: indica se a primeira linha contém o nome das variáveis
+- `col_types`: indica o tipo da variável. Se `col_type = NULL` (default), as variáveis são imputadas automaticamente.
+- `skip`: indica quantas linhas devem ser ignoradas no começo do arquivo
+- `trim_ws`: elimina espaços em branco desnecessários antes e depois do valor da variável
+- Ver mais opções através de `vignette("readr")` 
+
+
+## Importar arquivos `.txt`
+
+Neste exemplo, vamos ler os dados `participantes_tab.txt` através da função `read_delim()`:
+
+```{r, echo = FALSE, collapse = TRUE}
+# Sintaxe da funcao 
+library(readr)
+```
+
+
+```{r, echo = TRUE, collapse = TRUE}
+# Ler dados
+participantes <- readr::read_delim(
+  file = "dados/participantes_tab.txt", 
+  delim = "\t", 
+  show_col_types = FALSE
+  )
+
+
+participantes
+```
+
+## Importar arquivos `.txt`
+
+Para este exemplo, utilizaremos um arquivo que usa `|` como separador:
 
 ```{r,  echo = TRUE, collapse = TRUE}
-# Contas dos municipios (receitas e despesas)
-contas_munic <- c(23.7, 19.5, 13.8, 13.4, 22.1, 21.9)
-dim(contas_munic) # dim() mostra o atributo dimensao 
+# Abrir dados 
+individuos_alt <- read_delim(
+  "dados/participantes_barra.txt", 
+  delim = "|"
+  )
+
+individuos_alt
+```
+
+## Importar arquivos `.txt`
+
+:::{.incremental}
+- Neste caso, o delimitador de variáveis é o caractere `|`. Na verdade, qualquer caractere utilizado
+para separar valores das variáveis deve ser indicado no argumento `delim`.
+- Uma característica interessante das funções do pacote `readr` é o fato de lerem 
+diretamente arquivos compactados (`.gz`, `.bz2`, `.xz`, `.rar` ou `.zip`)
+:::
+
+## Importar arquivos `.csv`
+
+Para ler arquivos `.csv`, podemos utilizar a mesma função `read_delim()`, com o argumento
+`delim = ","`. No entanto, a função `read_csv()` lê os dados diretamente:
+
+```{r,  echo = TRUE, collapse = TRUE}
+# Importando os dados
+turistas_br_2021 <- read_delim(
+  "dados/chegadas_turistas_2021.csv", 
+  delim = ";"
+  )
+
+# Checar primeiras linhas
+head(turistas_br_2021, 5)
+```
+
+Como vimos, há nesse arquivos problemas de *encoding* (caracteres especiais não são lidos corretamente).
+
+
+## Importar arquivos `.csv`
+
+Para resolver problemas com caracteres especiais, utilizamos a função `locale()`:
+
+```{r,  echo = TRUE, collapse = TRUE}
+# Importando os dados
+turistas_br_2021 <- read_delim(
+  "dados/chegadas_turistas_2021.csv", 
+  delim = ";",
+  locale = locale(encoding = "Latin1")
+  )
+
+# Checar primeiras linhas
+head(turistas_br_2021, 5)
+```
+
+## Importar arquivos `.csv`
+
+Considere agora ler um arquivo `.csv` diretamente de uma página na internet (URL). Os dados apresentam informações sobre o número de queimadas 
+
+```{r,  echo = TRUE, collapse = TRUE, eval=FALSE}
+# URL da pagina 
+url <- "https://dadosabertos.ibama.gov.br/dados/RAPP/expEcoMadProdSubprodFl/relatorio.csv"
+
+# Importando os dados
+exploracao_madeira <- read_csv(url, show_col_types = FALSE)
+
+# Checar dimensões da base de dados
+dim(exploracao_madeira)
+```
+
+- Função similar é `read_csv2()`. A diferença é que esta considera colunas separadas por ponto-e-vírgula (;), enquanto que `read_csv()` considera a separação por vírgula (,).
+
+
+
+## Quizz \#2 {.inverse background-color="#386FA4"}
+
+
+Neste exercício, iremos obter os dados históricos do Índice Bovespa (Ibovespa) disponíveis
+no site da B3 [http://www.b3.com.br/pt_br/market-data-e-indices/indices/indices-amplos/indice-ibovespa-ibovespa-estatisticas-historicas.htm](http://www.b3.com.br/pt_br/market-data-e-indices/indices/indices-amplos/indice-ibovespa-ibovespa-estatisticas-historicas.htm)
+
+
+- Baixar os dados referentes ao segundo semestre de 2023
+- Salvar os dados na sua pasta de trabalho
+- Ajustar o diretório de trabalho
+- Utilizar uma das funções do `readr` para abrir os dados
+- Ver a estrutura de dados
+- Eliminar linhas desnecessárias
+
+```{r, echo = FALSE, collapse = TRUE}
+countdown::countdown(
+  minutes = 15
+)
+```
+
+
+## Lendo arquivos do Microsoft Excel
+
+Um pacote útil para leitura de arquivos do Microsoft Excel (`.xls` ou `.xlsx`) 
+é o pacote `readxl`, desenvolvido por Hadley Wickham (**The 
+RStudio Team**) 
+
+![](images/readxl_logo.png){fig-align="center" width="400"}
+
+
+Para mais informações sobre o pacote `readxl`, ver a documentação em
+[https://readxl.tidyverse.org](https://readxl.tidyverse.org).
+
+
+## Lendo arquivos Microsoft Excel
+
+A principal função para leitura é a `read_excel()`. Tal função
+identifica se a extensão do arquivo é `.xls` ou `.xlsx`.
+
+
+```{r,  eval = FALSE, echo = TRUE, collapse = TRUE}
+# Instalar pacote
+install.packages("readxl")
+library(readxl)
+
+# Sintaxe da funcao
+data <- read_excel(
+  path, 
+  sheet = NULL, 
+  range = NULL, 
+  skip = 0
+  )
+```
+
+Caso se conheça o formato exato do arquivo, pode-se utilizar as funcões
+`read_xls()` ou `read_xlsx()`.
+
+
+## Lendo arquivos Microsoft Excel
+
+Para este exemplo, utilizaremos os dados de Frotas de Veículos por municípios para
+o último trimestre de 2022. A série histórica está disponível na página do [Ministério da
+Infraestrurura](https://www.gov.br/infraestrutura/pt-br/assuntos/transito/conteudo-Senatran/frota-de-veiculos-2022)
+
+![](https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/29856_E348C4605E1B0AFE.jpg){fig-align="center" width="400"}
+
+## Lendo arquivos Microsoft Excel
+
+```{r,  echo = TRUE, collapse = TRUE}
+# Importando os dados
+frota_2022 <- readxl::read_excel(
+  "dados/frota_munic_modelo_2022.xls",
+  skip = 2
+)
+
+# Checar primeiras linhas
+head(frota_2022)
+```
+
+
+## Lendo arquivos Microsoft Excel
+
+Para selecionar uma aba específica, fazemos:
+
+```{r,  echo = TRUE, collapse = TRUE}
+# Nomes das abas
+readxl::excel_sheets("dados/frota_munic_modelo_2022.xls")
+
+# Importando os dados
+frota_2022 <- readxl::read_excel(
+  "dados/frota_munic_modelo_2022.xls",
+  sheet = "NOVEMBRO_2022",
+  skip = 2
+)
+readxl::excel_sheets("dados/frota_munic_modelo_2022.xls")
+# Checar primeiras linhas
+head(frota_2022)
+```
+
+
+## Lendo arquivos JSON 
+
+Um importante formato de arquivos é o JSON (**J**ava **S**cript **O**bject **N**otation). 
+
+- Permite a troca de dados de forma rápida entre sistemas (*parsing*).
+- Possui um formato independente.
+- Tem o formato de texto, facilmente legível em seus atributos.
+- É a estrutura de dados mais utilizada em APIs (*Application Programming Interface*)
+
+
+![](images/json_logo.png){fig-align="center" width="400"}
+
+
+
+
+## Lendo arquivos JSON 
+
+Alguns exemplos de arquivos JSON são:
+
+![](images/json_sample.png){fig-align="center" width="400"}
+
+## Lendo arquivos JSON 
+
+Alguns exemplos de arquivos JSON são:
+
+
+![](images/json_sample2.png){fig-align="center" width="400"}
+
+## Lendo arquivos JSON 
+
+
+![](images/json_sample4.png){fig-align="center" width="400"}
+
+
+
+## Lendo arquivos JSON 
+
+Alguns exemplos de arquivos JSON são:
+
+![](images/json_sample3.png){fig-align="center" width="400"}
+
+
+## Lendo arquivos JSON 
+
+Uma vez instalado e carregado o pacote `rjson`, podemos utilizar a função `fromJSON()`:
+
+```{r,  echo = TRUE, collapse = TRUE}
+# Carregar pacote
+library(rjson)
+
+# Ler arquivo JSON
+json_data <- fromJSON(file = "dados/jobs.json")
+class(json_data)
+```
+
+
+
+## Lendo arquivos JSON 
+
+Para converter o objeto em data frame, fazemos
+
+```{r,  echo = TRUE, collapse = TRUE}
+# Converter para data frame
+json_df <- as.data.frame(json_data)
+json_df
+```
+
+
+
+
+## O pacote `haven`
+  
+O pacote `haven` possibilita a leitura e escrita de vários formatos de dados dos principais
+pacotes estatísticos disponíveis, tais como `SPSS`, `SAS` e `Stata`.
+
+Atualmente, suporta os seguintes arquivos:
+
+- **SAS**: `read_sas()`, `read_xpt()` e `write_xpt()`
+- **SPSS**: `read_sav()` e `write_sav()` 
+- **Stata**: `read_dta()` lê arquivos `.dta` (até a versão 15), enquanto `write_dta()` cria arquivos `.dta` (versões 8-15).
+
+
+![](images/heaven_logo.png){fig-align="center" width="400"}
+
+
+
+
+## O pacote `haven`
+
+Seguem alguns exemplos da sintaxe:
+
+```{r,  eval = FALSE, echo = TRUE, collapse = TRUE}
+# Carregar pacote
+library(haven)
+
+# SAS
+read_sas("mtcars.sas7bdat")
+write_sas(mtcars, "mtcars.sas7bdat")
+
+# SPSS
+read_sav("mtcars.sav")
+write_sav(mtcars, "mtcars.sav")
+
+# Stata
+read_dta("mtcars.dta")
+write_dta(mtcars, "mtcars.dta")
+```
+
+## Web scraping
+
+O termo **web scraping** refere-se à prática de coleta de dados web, permitindo a extração de 
+dados diretamente de sites e convertendo-os em informação estruturada para posterior análise.
+
+![](images/web_scraping.png){fig-align="center" width="400"}
+
+
+
+
+## Web scraping
+
+No `R`, existem três pacotes principais para a extração de dados da web:
+
+- `httr`: realiza requisições web para obtenção das páginas de interesse
+- `xml2`: estrutura arquivos HTML ou XML de forma eficiente
+- `rvest`: reune funcionalidade dos dois pacotes anteriores e traz funções específicas
+
+É importante ter conhecimento prévio de `HTML`
+
+
+## Web scraping
+
+Como exemplo, gostaríamos de baixar os dados da tabela do campeonato brasileiro de 2022.
+
+```{r,  echo = TRUE, collapse = TRUE}
+# Carregar pacote
+library(rvest)
+
+# Definir url da página
+url <- "https://pt.wikipedia.org/wiki/Campeonato_Brasileiro_de_Futebol_de_2023_-_S%C3%A9rie_A"
+
+# Ler arquivo 
+cod_html <- read_html(url)
+
+# Extrair tabela
+tabela_html <- html_element(
+  cod_html, 
+  xpath = '//*[@id="mw-content-text"]/div[1]/table[3]'
+  ) 
+
+# Transformar para data frame
+brasileirao_2023 <- html_table(tabela_html)
+
+# Visualizar dados
+brasileirao_2023
+```
+
+# <font color="1b5299"> Salvando dados no formato `R` </font> {background-color="#BBDEF0"}
+
+## Salvando dados no formato `R`
+
+:::: {.columns}
+
+:::{.column width="50%"}
+Nesta parte, veremos como: 
+
+1. Salvar um objeto no formato `R`
+2. Salvar múltiplos objetos no formato `R`
+3. Salvar todo o workspace em um único arquivo
+::: 
+
+::: {.column width="50%"}
+
+![](images/load_save_rds.png){fig-align="center" width="1000"}
+
+:::
+
+:::: 
+
+
+
+
+
+## Salvar um objeto
+
+Para salvar uma base de dados do `R` em um único arquivo, utilizamos a função 
+`write_rds()`. O objeto pode ser lido através da função `read_rds()`.
+
+
+```{r,  eval = FALSE, echo = TRUE, collapse = TRUE}
+# Salvar um objeto em um arquivo
+save_rds(objeto, file = "meus_dados.rds")
+
+# Restaurar o objeto
+write_rds(file = "meus_dados.rds")
 ```
 
 . . .
 
-Para melhor visualizar as informações, podemos atribuir ao vetor a dimensão 2x3
+Por exemplo, podemos salvar o objeto `mtcars` em um arquivo '.rds':
 
-```{r,  echo = TRUE, collapse = TRUE}
-dim(contas_munic) <- c(2, 3)  
-contas_munic
+
+```{r,  eval = FALSE, echo = TRUE, collapse = TRUE}
+# Salvar um objeto em um arquivo
+write_rds(mtcars, file = "mtcars.rds")
+
+# Restaurar o objeto
+read_rds(file = "mtcars.rds")
 ```
 
-Portanto, o resultado é uma **matriz** com **duas** linhas e **três** colunas.
+## Salvando múltiplos objetos
 
-## Matrizes
+Para salvar múltiplos objetos em um único arquivo, utilizamos a função `save()`. O objeto será
+salvo no formato `.Rda` ou `.RData` (mesma extensão). Os objetos podem ser restaurados 
+através da função `load()`
 
-Podemos criar uma matriz através da função `matrix()`.
 
-```{r,  echo = TRUE, collapse = TRUE}
-# Matriz de contas dos municipios
-contas_matriz <- matrix(data = contas_munic, nrow = 2, ncol = 3, 
-                        byrow = F)
-contas_matriz
-dim(contas_matriz)
+```{r,  eval = FALSE, echo = TRUE, collapse = TRUE}
+# Salvar um objeto no formato .RData
+save(data1, file = "data.Rda")
+
+# Salvar multiplos objetos
+save(data1, data2, file = "data.Rda")
+
+# Carregar os dados
+load("data.Rda")
 ```
 
-## Matrizes
-
-Para **selecionar** um elemento de uma matriz, devemos informar
-os índices relativos à linha `i` e à coluna `j` através do
-operador `[i,j]`. Por exemplo:
-
-```{r,  echo = TRUE, collapse = TRUE}
-# Selecionar elementos da matriz
-contas_matriz[1,2]
-contas_matriz[2,3]
-contas_matriz[1, ]
-contas_matriz[ ,1]
-```
-
-## Matrizes
-
-Além disso, podemos atribuir nomes para as linhas e colunas de uma matriz:
-
-```{r,  echo = TRUE, collapse = TRUE}
-# Atribuir nomes as dimensões
-colnames(contas_matriz) <- c("Patos", "Conde", "Areia")
-rownames(contas_matriz) <- c("Receita", "Despesa")
-contas_matriz 
-
-```
-
-. . . 
-
-E selecionar através do seu nome:
-
-```{r,  echo = TRUE, collapse = TRUE}
-# Selecionar elementos
-contas_matriz["Receita", "Patos"] 
-contas_matriz["Despesa", "Areia"]
-contas_matriz[ , "Conde"] 
-```
-
-
-## Matrizes
-
-É possível criar matrizes através da junção de colunas (`cbind`) ou linhas (`rbind`):
-
-```{r,  echo = TRUE, collapse = TRUE}
-# Considere dois vetores
-a <- c(1, 2, 3) 
-b <- c(5, 6, 7)
-
-# Junção por linhas
-m <- rbind(a, b)
-m
-```
-
-## Matrizes
-
-É possível criar matrizes através da junção de colunas `cbind()` ou linhas `rbind()`:
-
-```{r,  echo = TRUE, collapse = TRUE}
-# Considere dois vetores
-c <- c(1, 3, 5) 
-d <- c(2, 4, 6)
-
-# Junção por colunas
-j <- cbind(c, d)
-j
-```
-
-
-## Operações com matrizes
-
-Algumas operações usuais com matrizes são as seguintes:
-
-```{r,  echo = TRUE, collapse = TRUE}
-# Transpor uma matriz
-t(contas_matriz)
-
-# Multiplicar por um escalar
-1000000 * contas_matriz
-```
-
-## 🚀 Quizz \#3 {.inverse background-color="#386FA4"}
-
-- Crie três vetores `x`, `y` e `z` com inteiros, cada um com 3 elementos. Combine os três vetores para formar uma matriz `A` (3 × 3), onde cada coluna representa um vetor. Altere os nomes das linhas para `a`, `b` e `c`.
-- Crie um vetor com 12 elementos do tipo `numeric`. Converta o vetor em uma matriz `B` (4 x 3) usando `matrix()`. Preencha os elementos por linha ajustando o argumento `byrow = TRUE`.
-- Obtenha a transposta da matriz `B` e multipique pela matriz original `B`. Qual a dimensão da matriz obtida?
-
-```{r, echo = FALSE, collapse = TRUE}
-countdown::countdown(
-  minutes = 10
-)
-```
-
-# Data Frames
-
-## Data frames
-Um **data frame** é uma das estruturas mais importantes para armazanamento de dados. Equivale, de certa forma, às *planilhas eletrônicas* com linhas e colunas. 
-
-
-* Um data frame é um conjunto de vetores de mesmo tamanho;
-* Cada **linha** representa informações para uma única unidade de observação
-* Cada **coluna** representa uma característica observada das unidades;
-* Elementos da mesma coluna devem ser do mesma classe.  
-
-![](images/data_frame.png){fig-align="center"}
-
-
-## Data frames
-
-É possível criar, carregar (dados dos pacotes) ou ler arquivos diretamente no `R`. Para criar um data frame, fazemos:
-
-```{r, echo = TRUE, collapse = TRUE}
-alunos_ufpb <- data.frame(
-  aluno = c("José", "Maria", "Pedro", "Carla", "Isabel"),
-  economia = c(1, 0, 0, 1, 1),
-  periodo = c(3, 4, 7, 2, 3),
-  cra = c(7.34, 8.45, 8.05, 7.98, 9.03)
-  )
-
-alunos_ufpb
-```
-
-## Data frames
-
-Para carregar dados dos pacotes, fazemos:
-
-```{r, echo = TRUE, collapse = TRUE}
-#install.packages("dados")
-head(dados::dados_gapminder)
-```
-
-## Data frames
-
-Algumas características dos dados:
-
-```{r, echo = TRUE, collapse = TRUE}
-# Estrutura dos dados
-str(dados::dados_gapminder)
-
-# Listar variaveis
-names(dados::dados_gapminder)
-```
-
-## 
-
-![](images/10_lines_code.jpeg){fig-align="center"}
