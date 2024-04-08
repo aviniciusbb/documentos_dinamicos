@@ -13,7 +13,7 @@ from: markdown+emoji
 
 > (…) o fato da **Ciência de Dados** existir como uma área se deve a uma falha colossal da estatística. Para mim, o que eu faço é o que é a estatística. É obter *insights* a partir dos dados utilizando modelagem e visualização. (Hadley Wickham)
 
-![](images/data_wrangling.jpg){fig-align="center" width="400"}
+![](images/data_wrangling.jpg){fig-align="center" width="700"}
 
 
 
