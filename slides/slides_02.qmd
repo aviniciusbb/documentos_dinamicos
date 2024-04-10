@@ -191,13 +191,6 @@ As principais funções são:
 
 ## Alguns exemplos
 
-O arquivo abaixo apresenta delimitação por `Tabs` 
-
-
-![](images/tsv_example.png){fig-align="center" width="400"}
-
-## Alguns exemplos
-
 O arquivo abaixo apresenta delimitação por vírgulas (*comma separated values* - CSV)
 
 ![](http://www.yohz.com/blogs/wp-content/uploads/2020/05/eea_csv_dates01.png){fig-align="center" width="400"}
@@ -212,7 +205,7 @@ O arquivo abaixo apresenta delimitação por ponto e vírgula (;)
 
 Arquivos `.txt` são arquivos padrões de texto, enquanto que arquivos `.csv` são arquivos geralmente separados por vírgula (,) ou ponto-e-vírgula (;).
 
-![](Images/read_txt_csv.png){fig-align="center" width="400"}
+![](images/read_txt_csv.png){fig-align="center" width="400"}
 
 A função a ser utilizada para ler os dados depende da forma em que as variáveis estão 
 **delimitadas**.
@@ -226,6 +219,14 @@ Para arquivos `.txt` simples, utilizamos a função básica `read_delim()`:
 # Sintaxe da funcao 
 library(readr)
 meus_dados <- read_delim(file = "meu_arquivo.txt")
+```
+
+. . .
+
+Alternativamente:
+```{r, eval = FALSE, echo = TRUE, collapse = TRUE}
+# Sintaxe da funcao 
+meus_dados <- readr::read_delim(file = "meu_arquivo.txt")
 ```
 
 ## Ler arquivos .txt ou .csv
@@ -254,8 +255,7 @@ library(readr)
 # Ler dados
 participantes <- readr::read_delim(
   file = "dados/participantes_tab.txt", 
-  delim = "\t", 
-  show_col_types = FALSE
+  delim = "\t"
   )
 
 
@@ -268,7 +268,7 @@ Para este exemplo, utilizaremos um arquivo que usa `|` como separador:
 
 ```{r,  echo = TRUE, collapse = TRUE}
 # Abrir dados 
-individuos_alt <- read_delim(
+individuos_alt <- readr::read_delim(
   "dados/participantes_barra.txt", 
   delim = "|"
   )
@@ -292,7 +292,7 @@ Para ler arquivos `.csv`, podemos utilizar a mesma função `read_delim()`, com 
 
 ```{r,  echo = TRUE, collapse = TRUE}
 # Importando os dados
-turistas_br_2021 <- read_delim(
+turistas_br_2021 <- readr::read_delim(
   "dados/chegadas_turistas_2021.csv", 
   delim = ";"
   )
@@ -301,16 +301,14 @@ turistas_br_2021 <- read_delim(
 head(turistas_br_2021, 5)
 ```
 
-Como vimos, há nesse arquivos problemas de *encoding* (caracteres especiais não são lidos corretamente).
-
 
 ## Importar arquivos `.csv`
 
-Para resolver problemas com caracteres especiais, utilizamos a função `locale()`:
+Como vimos, há nesse arquivos problemas de *encoding* (caracteres especiais não são lidos corretamente). Para resolver problemas com caracteres especiais, utilizamos a função `locale()`:
 
 ```{r,  echo = TRUE, collapse = TRUE}
 # Importando os dados
-turistas_br_2021 <- read_delim(
+turistas_br_2021 <- readr::read_delim(
   "dados/chegadas_turistas_2021.csv", 
   delim = ";",
   locale = locale(encoding = "Latin1")
@@ -329,7 +327,7 @@ Considere agora ler um arquivo `.csv` diretamente de uma página na internet (UR
 url <- "https://dadosabertos.ibama.gov.br/dados/RAPP/expEcoMadProdSubprodFl/relatorio.csv"
 
 # Importando os dados
-exploracao_madeira <- read_csv(url, show_col_types = FALSE)
+exploracao_madeira <- readr::read_csv(url, show_col_types = FALSE)
 
 # Checar dimensões da base de dados
 dim(exploracao_madeira)
@@ -347,8 +345,7 @@ no site da B3 [http://www.b3.com.br/pt_br/market-data-e-indices/indices/indices-
 
 
 - Baixar os dados referentes ao segundo semestre de 2023
-- Salvar os dados na sua pasta de trabalho
-- Ajustar o diretório de trabalho
+- Salvar os dados na sua pasta de trabalho (projeto)
 - Utilizar uma das funções do `readr` para abrir os dados
 - Ver a estrutura de dados
 - Eliminar linhas desnecessárias
@@ -433,7 +430,7 @@ frota_2022 <- readxl::read_excel(
   sheet = "NOVEMBRO_2022",
   skip = 2
 )
-readxl::excel_sheets("dados/frota_munic_modelo_2022.xls")
+
 # Checar primeiras linhas
 head(frota_2022)
 ```
@@ -524,44 +521,21 @@ brasileirao_2023 <- html_table(tabela_html)
 brasileirao_2023
 ```
 
-# <font color="1b5299"> Salvando dados no formato `R` </font> {background-color="#BBDEF0"}
+# Salvando dados no formato `R` 
 
 ## Salvando dados no formato `R`
 
-:::: {.columns}
 
-:::{.column width="50%"}
-Nesta parte, veremos como: 
-
-1. Salvar um objeto no formato `R`
-2. Salvar múltiplos objetos no formato `R`
-3. Salvar todo o workspace em um único arquivo
-::: 
-
-::: {.column width="50%"}
-
-![](images/load_save_rds.png){fig-align="center" width="1000"}
-
-:::
-
-:::: 
-
-
-
-
-
-## Salvar um objeto
-
-Para salvar uma base de dados do `R` em um único arquivo, utilizamos a função 
-`write_rds()`. O objeto pode ser lido através da função `read_rds()`.
+Para salvar uma base de dados do `R` (formato `.rds`), utilizamos a função 
+`readr::write_rds()`. Para ler, utilizamos a função `readr::read_rds()`.
 
 
 ```{r,  eval = FALSE, echo = TRUE, collapse = TRUE}
 # Salvar um objeto em um arquivo
-save_rds(objeto, file = "meus_dados.rds")
+readr::save_rds(objeto, file = "meus_dados.rds")
 
 # Restaurar o objeto
-write_rds(file = "meus_dados.rds")
+readr::write_rds(file = "meus_dados.rds")
 ```
 
 . . .
@@ -571,27 +545,30 @@ Por exemplo, podemos salvar o objeto `mtcars` em um arquivo '.rds':
 
 ```{r,  eval = FALSE, echo = TRUE, collapse = TRUE}
 # Salvar um objeto em um arquivo
-write_rds(mtcars, file = "mtcars.rds")
+readr::write_rds(mtcars, file = "mtcars.rds")
 
 # Restaurar o objeto
-read_rds(file = "mtcars.rds")
+readr::read_rds(file = "mtcars.rds")
 ```
 
-## Salvando múltiplos objetos
 
-Para salvar múltiplos objetos em um único arquivo, utilizamos a função `save()`. O objeto será
-salvo no formato `.Rda` ou `.RData` (mesma extensão). Os objetos podem ser restaurados 
-através da função `load()`
+## Gerenciando dados
+
+Para projetos em equipe, o melhor formato para se salvar um banco de dados depende 
+do tamanho e do objetivo:
+
+- Para bancos relativamente pequenos, usar o formato `.csv`. Utilizar
+a função `readr::write_csv()` ou `readr::write_csv2()`.
+
+- Uma boa prática consiste em utilizar serviços de **Armazenamento em Nuvem**, tais como
+[Dropbox](https://www.dropbox.com/), [Google Drive](https://drive.google.com/) e [Microsoft OneDrive](https://onedrive.live.com/). 
+Tais serviços são úteis para armazenar e compartilhar diversos tipos de arquivos entre a equipe.
+
+- Para dados maiores, é necessário utilizar um esquema de banco de dados,
+sejam dados relacionais ou não relacionais. Exemplos incluem [MySQL](https://www.mysql.com/), [PostgreSQL](https://www.postgresql.org/) e [MongoDB](https://www.mongodb.com/).
 
 
-```{r,  eval = FALSE, echo = TRUE, collapse = TRUE}
-# Salvar um objeto no formato .RData
-save(data1, file = "data.Rda")
 
-# Salvar multiplos objetos
-save(data1, data2, file = "data.Rda")
 
-# Carregar os dados
-load("data.Rda")
-```
+
 
