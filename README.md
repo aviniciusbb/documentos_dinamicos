@@ -27,6 +27,7 @@ Esta disciplina tem como proposta introduzir as principais técnicas computacion
 
 1. [**R Básico**](https://raw.githack.com/aviniciusbb/documentos_dinamicos/main/slides/slides_01.html)
 2. [**Leitura de dados**](https://raw.githack.com/aviniciusbb/documentos_dinamicos/main/slides/slides_02.html)
+3. [**Manipulação de dados**](https://raw.githack.com/aviniciusbb/documentos_dinamicos/main/slides/slides_03.html)
 
 
 ## :link: Links
