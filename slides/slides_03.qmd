@@ -92,7 +92,7 @@ tidying**, ou **organização dos dados**. Um banco de dados é considerado
 ## `Tibbles`
 
 Uma `tibble` é um tipo especial de data frame, com características
-distintas para facilitar a manipulação dos dados.
+otimizadas para facilitar a manipulação dos dados.
 
 
 ::: columns
@@ -121,25 +121,16 @@ data.frame(
 :::
 :::
 
-## `Tibbles`
-
-Diferentemente de data frames, `tibbles` possuem como principais
-características:
-
--   Otimiza o `print()` dos dados na tela;
--   Não altera o nome e a classe das variáveis;
--   Não permite nomear linhas através de `row.names()`.
 
 ## `Pipes |>`
 
-- Os operadores `|>` são chamados de **pipes**, 
+- Os operadores `|>` são chamados de **pipes** 
 - Foram introduzidos, pela primeira vez, através do
     pacote `magrittr`.
 - Pipes são operadores sequenciais e podem ser lidos como e
     *"então..."*
-- Versões anteriores do pipe: `%.%` e `%>%`
-- O novo pipe `|>` é o operador nativo do `R`, introduzido a partir da
-    versão 4.1.0
+- Versões anteriores do pipe: `%.%` e `%>%` (para versões anteriores a 4.1.0)
+- O pipe `|>` é operador nativo do `R` (tecla de atalho `Ctrl + Shift + M`)
 
 ![](images/pipe.jpg){fig-align="center" width="600"}
 
@@ -156,7 +147,7 @@ operação do lado esquerdo como argumento da função do lado direito:
 
 ```{r, echo = TRUE, collapse = TRUE}
 # Operacao usual
-sqrt(sum(9, 16))
+sqrt(sum(c(9, 16)))
 
 # Operacao usando pipe
 c(9, 16) |>
@@ -164,10 +155,6 @@ c(9, 16) |>
   sqrt()
 ```
 
-. . . 
-
-- No `RStudio`, a tecla de atalho do pipe é o `Ctrl + Shift + M`
-- Se a versão `R` instalada é anterior a 4.1.0, o pipe padrão será o `%>%`
 
 ## O pacote `dplyr`
 
@@ -414,24 +401,6 @@ pnud_mun |>
 
 -   O símbolo `~.x` representa uma **variável dinâmica**, guardando
     informações sobre todas as variáveis selecionadas.
--   A funcão `slice()` seleciona linhas baseado emsuas posições.
-
-## Usando `where()`
-
-A função `where()` afeta as variáveis condicionalmente. É utilizada para
-transformar as variáveis de uma classe em outra:
-
-```{r, echo = TRUE, collapse = TRUE}
-#| code-line-numbers: "|2|3-5|6-8|"
-# Mudar classe de variaveis
-pnud_mun |>
-  select(
-    ano:idhm_r
-    ) |>
-  mutate(
-    across(where(is.character), as.factor)
-    )
-```
 
 
 ## A função `arrange()`

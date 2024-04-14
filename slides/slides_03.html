@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Antonio Vinícius Barbosa">
-  <meta name="dcterms.date" content="2024-04-10">
+  <meta name="dcterms.date" content="2024-04-14">
   <title>Análise de Dados e Documentos Dinâmicos</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -404,7 +404,7 @@ Antonio Vinícius Barbosa
 </div>
 </div>
 
-  <p class="date">2024-04-10</p>
+  <p class="date">2024-04-14</p>
 </section>
 <section id="manipulação-de-dados" class="slide level2">
 <h2>Manipulação de Dados</h2>
@@ -481,7 +481,7 @@ Antonio Vinícius Barbosa
 <img data-src="images/tidy_data.png" width="1000" class="r-stretch quarto-figure-center"></section>
 <section id="tibbles" class="slide level2">
 <h2><code>Tibbles</code></h2>
-<p>Uma <code>tibble</code> é um tipo especial de data frame, com características distintas para facilitar a manipulação dos dados.</p>
+<p>Uma <code>tibble</code> é um tipo especial de data frame, com características otimizadas para facilitar a manipulação dos dados.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -495,12 +495,12 @@ Antonio Vinícius Barbosa
 <span id="cb2-8"><a href="#cb2-8"></a><span class="do">## # A tibble: 6 × 4</span></span>
 <span id="cb2-9"><a href="#cb2-9"></a><span class="do">##      id munic grupo valor</span></span>
 <span id="cb2-10"><a href="#cb2-10"></a><span class="do">##   &lt;int&gt; &lt;chr&gt; &lt;dbl&gt; &lt;int&gt;</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="do">## 1     1 A         1     9</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="do">## 2     2 B         0    47</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="do">## 3     3 C         1    45</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="do">## 4     4 D         0    98</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="do">## 5     5 E         1    26</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="do">## 6     6 F         0    30</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="do">## 1     1 A         1    83</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="do">## 2     2 B         0    72</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="do">## 3     3 C         1    19</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="do">## 4     4 D         0    59</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="do">## 5     5 E         1    11</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="do">## 6     6 F         0    14</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
@@ -512,33 +512,24 @@ Antonio Vinícius Barbosa
 <span id="cb3-6"><a href="#cb3-6"></a>  <span class="at">valor =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">6</span>)</span>
 <span id="cb3-7"><a href="#cb3-7"></a>)</span>
 <span id="cb3-8"><a href="#cb3-8"></a><span class="do">##   id munic grupo valor</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="do">## 1  1     A     1    81</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="do">## 2  2     B     0    58</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="do">## 3  3     C     1    76</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="do">## 4  4     D     0    24</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="do">## 5  5     E     1     7</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="do">## 6  6     F     0    95</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="do">## 1  1     A     1     5</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="do">## 2  2     B     0    19</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="do">## 3  3     C     1     6</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="do">## 4  4     D     0    84</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="do">## 5  5     E     1    60</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="do">## 6  6     F     0    92</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="tibbles-1" class="slide level2">
-<h2><code>Tibbles</code></h2>
-<p>Diferentemente de data frames, <code>tibbles</code> possuem como principais características:</p>
-<ul>
-<li>Otimiza o <code>print()</code> dos dados na tela;</li>
-<li>Não altera o nome e a classe das variáveis;</li>
-<li>Não permite nomear linhas através de <code>row.names()</code>.</li>
-</ul>
 </section>
 <section id="pipes" class="slide level2">
 <h2><code>Pipes |&gt;</code></h2>
 <ul>
-<li>Os operadores <code>|&gt;</code> são chamados de <strong>pipes</strong>,</li>
+<li>Os operadores <code>|&gt;</code> são chamados de <strong>pipes</strong></li>
 <li>Foram introduzidos, pela primeira vez, através do pacote <code>magrittr</code>.</li>
 <li>Pipes são operadores sequenciais e podem ser lidos como e <em>“então…”</em></li>
-<li>Versões anteriores do pipe: <code>%.%</code> e <code>%&gt;%</code></li>
-<li>O novo pipe <code>|&gt;</code> é o operador nativo do <code>R</code>, introduzido a partir da versão 4.1.0</li>
+<li>Versões anteriores do pipe: <code>%.%</code> e <code>%&gt;%</code> (para versões anteriores a 4.1.0)</li>
+<li>O pipe <code>|&gt;</code> é operador nativo do <code>R</code> (tecla de atalho <code>Ctrl + Shift + M</code>)</li>
 </ul>
 
 <img data-src="images/pipe.jpg" width="600" class="r-stretch quarto-figure-center"></section>
@@ -552,7 +543,7 @@ Antonio Vinícius Barbosa
 <p>O pipe <code>|&gt;</code> funciona de forma simples: utiliza o valor resultante da operação do lado esquerdo como argumento da função do lado direito:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Operacao usual</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">sqrt</span>(<span class="fu">sum</span>(<span class="dv">9</span>, <span class="dv">16</span>))</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">sqrt</span>(<span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">16</span>)))</span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="do">## [1] 5</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a></span>
 <span id="cb4-5"><a href="#cb4-5"></a><span class="co"># Operacao usando pipe</span></span>
@@ -560,12 +551,6 @@ Antonio Vinícius Barbosa
 <span id="cb4-7"><a href="#cb4-7"></a>  <span class="fu">sum</span>() <span class="sc">|&gt;</span></span>
 <span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">sqrt</span>()</span>
 <span id="cb4-9"><a href="#cb4-9"></a><span class="do">## [1] 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="fragment">
-<ul>
-<li>No <code>RStudio</code>, a tecla de atalho do pipe é o <code>Ctrl + Shift + M</code></li>
-<li>Se a versão <code>R</code> instalada é anterior a 4.1.0, o pipe padrão será o <code>%&gt;%</code></li>
-</ul>
 </div>
 </section>
 <section id="o-pacote-dplyr" class="slide level2">
@@ -904,36 +889,7 @@ Antonio Vinícius Barbosa
 <div class="fragment">
 <ul>
 <li>O símbolo <code>~.x</code> representa uma <strong>variável dinâmica</strong>, guardando informações sobre todas as variáveis selecionadas.</li>
-<li>A funcão <code>slice()</code> seleciona linhas baseado emsuas posições.</li>
 </ul>
-</div>
-</section>
-<section id="usando-where" class="slide level2">
-<h2>Usando <code>where()</code></h2>
-<p>A função <code>where()</code> afeta as variáveis condicionalmente. É utilizada para transformar as variáveis de uma classe em outra:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="|2|3-5|6-8|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Mudar classe de variaveis</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
-<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">select</span>(</span>
-<span id="cb15-4"><a href="#cb15-4"></a>    ano<span class="sc">:</span>idhm_r</span>
-<span id="cb15-5"><a href="#cb15-5"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb15-6"><a href="#cb15-6"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb15-7"><a href="#cb15-7"></a>    <span class="fu">across</span>(<span class="fu">where</span>(is.character), as.factor)</span>
-<span id="cb15-8"><a href="#cb15-8"></a>    )</span>
-<span id="cb15-9"><a href="#cb15-9"></a><span class="do">## # A tibble: 16,686 × 8</span></span>
-<span id="cb15-10"><a href="#cb15-10"></a><span class="do">##      ano muni                  uf    regiao  idhm idhm_e idhm_l idhm_r</span></span>
-<span id="cb15-11"><a href="#cb15-11"></a><span class="do">##    &lt;dbl&gt; &lt;fct&gt;                 &lt;fct&gt; &lt;fct&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;</span></span>
-<span id="cb15-12"><a href="#cb15-12"></a><span class="do">##  1  1991 ALTA FLORESTA D'OESTE RO    Norte  0.329  0.112  0.617  0.516</span></span>
-<span id="cb15-13"><a href="#cb15-13"></a><span class="do">##  2  1991 ARIQUEMES             RO    Norte  0.432  0.199  0.684  0.593</span></span>
-<span id="cb15-14"><a href="#cb15-14"></a><span class="do">##  3  1991 CABIXI                RO    Norte  0.309  0.108  0.636  0.43 </span></span>
-<span id="cb15-15"><a href="#cb15-15"></a><span class="do">##  4  1991 CACOAL                RO    Norte  0.407  0.171  0.667  0.593</span></span>
-<span id="cb15-16"><a href="#cb15-16"></a><span class="do">##  5  1991 CEREJEIRAS            RO    Norte  0.386  0.167  0.629  0.547</span></span>
-<span id="cb15-17"><a href="#cb15-17"></a><span class="do">##  6  1991 COLORADO DO OESTE     RO    Norte  0.376  0.151  0.658  0.536</span></span>
-<span id="cb15-18"><a href="#cb15-18"></a><span class="do">##  7  1991 CORUMBIARA            RO    Norte  0.203  0.039  0.572  0.373</span></span>
-<span id="cb15-19"><a href="#cb15-19"></a><span class="do">##  8  1991 COSTA MARQUES         RO    Norte  0.425  0.22   0.629  0.553</span></span>
-<span id="cb15-20"><a href="#cb15-20"></a><span class="do">##  9  1991 ESPIGÃO D'OESTE       RO    Norte  0.388  0.159  0.653  0.561</span></span>
-<span id="cb15-21"><a href="#cb15-21"></a><span class="do">## 10  1991 GUAJARÁ-MIRIM         RO    Norte  0.468  0.247  0.662  0.625</span></span>
-<span id="cb15-22"><a href="#cb15-22"></a><span class="do">## # ℹ 16,676 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="a-função-arrange" class="slide level2">
@@ -948,32 +904,32 @@ Antonio Vinícius Barbosa
 <li>Para ordenar em ordem <strong>decrescente</strong>, utiliza-se o argumento <code>desc()</code></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="|2|3-5|6-9|10-12|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Ordenar linhas</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">select</span>(</span>
-<span id="cb16-4"><a href="#cb16-4"></a>    ano, muni, uf, regiao, espvida</span>
-<span id="cb16-5"><a href="#cb16-5"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb16-6"><a href="#cb16-6"></a>  <span class="fu">filter</span>(</span>
-<span id="cb16-7"><a href="#cb16-7"></a>    ano <span class="sc">==</span> <span class="dv">2010</span>,</span>
-<span id="cb16-8"><a href="#cb16-8"></a>    regiao <span class="sc">==</span> <span class="st">"Nordeste"</span></span>
-<span id="cb16-9"><a href="#cb16-9"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb16-10"><a href="#cb16-10"></a>  <span class="fu">arrange</span>(</span>
-<span id="cb16-11"><a href="#cb16-11"></a>    <span class="fu">desc</span>(espvida)</span>
-<span id="cb16-12"><a href="#cb16-12"></a>  )</span>
-<span id="cb16-13"><a href="#cb16-13"></a><span class="do">## # A tibble: 1,794 × 5</span></span>
-<span id="cb16-14"><a href="#cb16-14"></a><span class="do">##      ano muni                    uf    regiao   espvida</span></span>
-<span id="cb16-15"><a href="#cb16-15"></a><span class="do">##    &lt;dbl&gt; &lt;chr&gt;                   &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;</span></span>
-<span id="cb16-16"><a href="#cb16-16"></a><span class="do">##  1  2010 FERNANDO DE NORONHA     PE    Nordeste    75.4</span></span>
-<span id="cb16-17"><a href="#cb16-17"></a><span class="do">##  2  2010 OLINDA                  PE    Nordeste    75.2</span></span>
-<span id="cb16-18"><a href="#cb16-18"></a><span class="do">##  3  2010 SALVADOR                BA    Nordeste    75.1</span></span>
-<span id="cb16-19"><a href="#cb16-19"></a><span class="do">##  4  2010 NATAL                   RN    Nordeste    75.1</span></span>
-<span id="cb16-20"><a href="#cb16-20"></a><span class="do">##  5  2010 SOBRAL                  CE    Nordeste    74.9</span></span>
-<span id="cb16-21"><a href="#cb16-21"></a><span class="do">##  6  2010 JOÃO PESSOA             PB    Nordeste    74.9</span></span>
-<span id="cb16-22"><a href="#cb16-22"></a><span class="do">##  7  2010 JABOATÃO DOS GUARARAPES PE    Nordeste    74.8</span></span>
-<span id="cb16-23"><a href="#cb16-23"></a><span class="do">##  8  2010 PAULISTA                PE    Nordeste    74.8</span></span>
-<span id="cb16-24"><a href="#cb16-24"></a><span class="do">##  9  2010 SÃO GONÇALO DO AMARANTE RN    Nordeste    74.7</span></span>
-<span id="cb16-25"><a href="#cb16-25"></a><span class="do">## 10  2010 LAURO DE FREITAS        BA    Nordeste    74.6</span></span>
-<span id="cb16-26"><a href="#cb16-26"></a><span class="do">## # ℹ 1,784 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="|2|3-5|6-9|10-12|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Ordenar linhas</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">select</span>(</span>
+<span id="cb15-4"><a href="#cb15-4"></a>    ano, muni, uf, regiao, espvida</span>
+<span id="cb15-5"><a href="#cb15-5"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a>  <span class="fu">filter</span>(</span>
+<span id="cb15-7"><a href="#cb15-7"></a>    ano <span class="sc">==</span> <span class="dv">2010</span>,</span>
+<span id="cb15-8"><a href="#cb15-8"></a>    regiao <span class="sc">==</span> <span class="st">"Nordeste"</span></span>
+<span id="cb15-9"><a href="#cb15-9"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb15-10"><a href="#cb15-10"></a>  <span class="fu">arrange</span>(</span>
+<span id="cb15-11"><a href="#cb15-11"></a>    <span class="fu">desc</span>(espvida)</span>
+<span id="cb15-12"><a href="#cb15-12"></a>  )</span>
+<span id="cb15-13"><a href="#cb15-13"></a><span class="do">## # A tibble: 1,794 × 5</span></span>
+<span id="cb15-14"><a href="#cb15-14"></a><span class="do">##      ano muni                    uf    regiao   espvida</span></span>
+<span id="cb15-15"><a href="#cb15-15"></a><span class="do">##    &lt;dbl&gt; &lt;chr&gt;                   &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;</span></span>
+<span id="cb15-16"><a href="#cb15-16"></a><span class="do">##  1  2010 FERNANDO DE NORONHA     PE    Nordeste    75.4</span></span>
+<span id="cb15-17"><a href="#cb15-17"></a><span class="do">##  2  2010 OLINDA                  PE    Nordeste    75.2</span></span>
+<span id="cb15-18"><a href="#cb15-18"></a><span class="do">##  3  2010 SALVADOR                BA    Nordeste    75.1</span></span>
+<span id="cb15-19"><a href="#cb15-19"></a><span class="do">##  4  2010 NATAL                   RN    Nordeste    75.1</span></span>
+<span id="cb15-20"><a href="#cb15-20"></a><span class="do">##  5  2010 SOBRAL                  CE    Nordeste    74.9</span></span>
+<span id="cb15-21"><a href="#cb15-21"></a><span class="do">##  6  2010 JOÃO PESSOA             PB    Nordeste    74.9</span></span>
+<span id="cb15-22"><a href="#cb15-22"></a><span class="do">##  7  2010 JABOATÃO DOS GUARARAPES PE    Nordeste    74.8</span></span>
+<span id="cb15-23"><a href="#cb15-23"></a><span class="do">##  8  2010 PAULISTA                PE    Nordeste    74.8</span></span>
+<span id="cb15-24"><a href="#cb15-24"></a><span class="do">##  9  2010 SÃO GONÇALO DO AMARANTE RN    Nordeste    74.7</span></span>
+<span id="cb15-25"><a href="#cb15-25"></a><span class="do">## 10  2010 LAURO DE FREITAS        BA    Nordeste    74.6</span></span>
+<span id="cb15-26"><a href="#cb15-26"></a><span class="do">## # ℹ 1,784 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="a-função-summarise" class="slide level2">
@@ -985,91 +941,91 @@ Antonio Vinícius Barbosa
 <h2>A função <code>summarise()</code></h2>
 <p>A função <code>summarise()</code> realiza operações sobre um conjunto de valores. Suponha que queiramos obter a renda per capita média dos municípios em 2010:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="|2|3-5|6-8|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Sumario</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">filter</span>(</span>
-<span id="cb17-4"><a href="#cb17-4"></a>    ano <span class="sc">==</span> <span class="dv">2010</span></span>
-<span id="cb17-5"><a href="#cb17-5"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb17-6"><a href="#cb17-6"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb17-7"><a href="#cb17-7"></a>    <span class="at">media_rdpc =</span> <span class="fu">mean</span>(rdpc)</span>
-<span id="cb17-8"><a href="#cb17-8"></a>    )</span>
-<span id="cb17-9"><a href="#cb17-9"></a><span class="do">## # A tibble: 1 × 1</span></span>
-<span id="cb17-10"><a href="#cb17-10"></a><span class="do">##   media_rdpc</span></span>
-<span id="cb17-11"><a href="#cb17-11"></a><span class="do">##        &lt;dbl&gt;</span></span>
-<span id="cb17-12"><a href="#cb17-12"></a><span class="do">## 1       493.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="|2|3-5|6-8|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Sumario</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">filter</span>(</span>
+<span id="cb16-4"><a href="#cb16-4"></a>    ano <span class="sc">==</span> <span class="dv">2010</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb16-7"><a href="#cb16-7"></a>    <span class="at">media_rdpc =</span> <span class="fu">mean</span>(rdpc)</span>
+<span id="cb16-8"><a href="#cb16-8"></a>    )</span>
+<span id="cb16-9"><a href="#cb16-9"></a><span class="do">## # A tibble: 1 × 1</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a><span class="do">##   media_rdpc</span></span>
+<span id="cb16-11"><a href="#cb16-11"></a><span class="do">##        &lt;dbl&gt;</span></span>
+<span id="cb16-12"><a href="#cb16-12"></a><span class="do">## 1       493.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="a-função-summarise-2" class="slide level2">
 <h2>A função <code>summarise()</code></h2>
 <p>Em geral, tal função é utilizada conjuntamente com a função <code>group_by()</code>, a qual serve para realizar operações dentro de um grupo. Por exemplo, para obter a renda média dos estados brasileiros, fazemos:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="|2|3-5|6-8|9-11|12-14|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Agregacao por gupo</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
-<span id="cb18-3"><a href="#cb18-3"></a>  <span class="fu">filter</span>(</span>
-<span id="cb18-4"><a href="#cb18-4"></a>    ano <span class="sc">==</span> <span class="dv">2010</span></span>
-<span id="cb18-5"><a href="#cb18-5"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb18-6"><a href="#cb18-6"></a>  <span class="fu">group_by</span>(</span>
-<span id="cb18-7"><a href="#cb18-7"></a>    uf</span>
-<span id="cb18-8"><a href="#cb18-8"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb18-9"><a href="#cb18-9"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb18-10"><a href="#cb18-10"></a>    <span class="at">m_rdpc =</span> <span class="fu">mean</span>(rdpc)</span>
-<span id="cb18-11"><a href="#cb18-11"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb18-12"><a href="#cb18-12"></a>  <span class="fu">arrange</span>(</span>
-<span id="cb18-13"><a href="#cb18-13"></a>    <span class="fu">desc</span>(m_rdpc)</span>
-<span id="cb18-14"><a href="#cb18-14"></a>  )</span>
-<span id="cb18-15"><a href="#cb18-15"></a><span class="do">## # A tibble: 27 × 2</span></span>
-<span id="cb18-16"><a href="#cb18-16"></a><span class="do">##    uf    m_rdpc</span></span>
-<span id="cb18-17"><a href="#cb18-17"></a><span class="do">##    &lt;chr&gt;  &lt;dbl&gt;</span></span>
-<span id="cb18-18"><a href="#cb18-18"></a><span class="do">##  1 DF     1715.</span></span>
-<span id="cb18-19"><a href="#cb18-19"></a><span class="do">##  2 SC      767.</span></span>
-<span id="cb18-20"><a href="#cb18-20"></a><span class="do">##  3 RS      742.</span></span>
-<span id="cb18-21"><a href="#cb18-21"></a><span class="do">##  4 SP      714.</span></span>
-<span id="cb18-22"><a href="#cb18-22"></a><span class="do">##  5 RJ      666.</span></span>
-<span id="cb18-23"><a href="#cb18-23"></a><span class="do">##  6 PR      610.</span></span>
-<span id="cb18-24"><a href="#cb18-24"></a><span class="do">##  7 MS      597.</span></span>
-<span id="cb18-25"><a href="#cb18-25"></a><span class="do">##  8 GO      583.</span></span>
-<span id="cb18-26"><a href="#cb18-26"></a><span class="do">##  9 MT      580.</span></span>
-<span id="cb18-27"><a href="#cb18-27"></a><span class="do">## 10 ES      576.</span></span>
-<span id="cb18-28"><a href="#cb18-28"></a><span class="do">## # ℹ 17 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="|2|3-5|6-8|9-11|12-14|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Agregacao por gupo</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">filter</span>(</span>
+<span id="cb17-4"><a href="#cb17-4"></a>    ano <span class="sc">==</span> <span class="dv">2010</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a>  <span class="fu">group_by</span>(</span>
+<span id="cb17-7"><a href="#cb17-7"></a>    uf</span>
+<span id="cb17-8"><a href="#cb17-8"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb17-9"><a href="#cb17-9"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb17-10"><a href="#cb17-10"></a>    <span class="at">m_rdpc =</span> <span class="fu">mean</span>(rdpc)</span>
+<span id="cb17-11"><a href="#cb17-11"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb17-12"><a href="#cb17-12"></a>  <span class="fu">arrange</span>(</span>
+<span id="cb17-13"><a href="#cb17-13"></a>    <span class="fu">desc</span>(m_rdpc)</span>
+<span id="cb17-14"><a href="#cb17-14"></a>  )</span>
+<span id="cb17-15"><a href="#cb17-15"></a><span class="do">## # A tibble: 27 × 2</span></span>
+<span id="cb17-16"><a href="#cb17-16"></a><span class="do">##    uf    m_rdpc</span></span>
+<span id="cb17-17"><a href="#cb17-17"></a><span class="do">##    &lt;chr&gt;  &lt;dbl&gt;</span></span>
+<span id="cb17-18"><a href="#cb17-18"></a><span class="do">##  1 DF     1715.</span></span>
+<span id="cb17-19"><a href="#cb17-19"></a><span class="do">##  2 SC      767.</span></span>
+<span id="cb17-20"><a href="#cb17-20"></a><span class="do">##  3 RS      742.</span></span>
+<span id="cb17-21"><a href="#cb17-21"></a><span class="do">##  4 SP      714.</span></span>
+<span id="cb17-22"><a href="#cb17-22"></a><span class="do">##  5 RJ      666.</span></span>
+<span id="cb17-23"><a href="#cb17-23"></a><span class="do">##  6 PR      610.</span></span>
+<span id="cb17-24"><a href="#cb17-24"></a><span class="do">##  7 MS      597.</span></span>
+<span id="cb17-25"><a href="#cb17-25"></a><span class="do">##  8 GO      583.</span></span>
+<span id="cb17-26"><a href="#cb17-26"></a><span class="do">##  9 MT      580.</span></span>
+<span id="cb17-27"><a href="#cb17-27"></a><span class="do">## 10 ES      576.</span></span>
+<span id="cb17-28"><a href="#cb17-28"></a><span class="do">## # ℹ 17 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="a-função-summarise-3" class="slide level2">
 <h2>A função <code>summarise()</code></h2>
 <p>Podemos agrupar por mais de uma variável, como no exemplo a seguir:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="|2|3-5|6-8|9-11|12-14|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Agregacao por gupo</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">select</span>(</span>
-<span id="cb19-4"><a href="#cb19-4"></a>    ano, regiao, gini</span>
-<span id="cb19-5"><a href="#cb19-5"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb19-6"><a href="#cb19-6"></a>  <span class="fu">group_by</span>(</span>
-<span id="cb19-7"><a href="#cb19-7"></a>    regiao, ano</span>
-<span id="cb19-8"><a href="#cb19-8"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb19-9"><a href="#cb19-9"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb19-10"><a href="#cb19-10"></a>    <span class="at">m_gini =</span> <span class="fu">mean</span>(gini)</span>
-<span id="cb19-11"><a href="#cb19-11"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb19-12"><a href="#cb19-12"></a>  <span class="fu">arrange</span>(</span>
-<span id="cb19-13"><a href="#cb19-13"></a>    <span class="fu">desc</span>(m_gini)</span>
-<span id="cb19-14"><a href="#cb19-14"></a>  )</span>
-<span id="cb19-15"><a href="#cb19-15"></a><span class="do">## # A tibble: 15 × 3</span></span>
-<span id="cb19-16"><a href="#cb19-16"></a><span class="do">## # Groups:   regiao [5]</span></span>
-<span id="cb19-17"><a href="#cb19-17"></a><span class="do">##    regiao         ano m_gini</span></span>
-<span id="cb19-18"><a href="#cb19-18"></a><span class="do">##    &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;</span></span>
-<span id="cb19-19"><a href="#cb19-19"></a><span class="do">##  1 Norte         2000  0.599</span></span>
-<span id="cb19-20"><a href="#cb19-20"></a><span class="do">##  2 Norte         2010  0.568</span></span>
-<span id="cb19-21"><a href="#cb19-21"></a><span class="do">##  3 Nordeste      2000  0.562</span></span>
-<span id="cb19-22"><a href="#cb19-22"></a><span class="do">##  4 Centro-Oeste  2000  0.561</span></span>
-<span id="cb19-23"><a href="#cb19-23"></a><span class="do">##  5 Norte         1991  0.543</span></span>
-<span id="cb19-24"><a href="#cb19-24"></a><span class="do">##  6 Centro-Oeste  1991  0.541</span></span>
-<span id="cb19-25"><a href="#cb19-25"></a><span class="do">##  7 Sul           1991  0.531</span></span>
-<span id="cb19-26"><a href="#cb19-26"></a><span class="do">##  8 Sudeste       2000  0.530</span></span>
-<span id="cb19-27"><a href="#cb19-27"></a><span class="do">##  9 Nordeste      2010  0.525</span></span>
-<span id="cb19-28"><a href="#cb19-28"></a><span class="do">## 10 Sul           2000  0.524</span></span>
-<span id="cb19-29"><a href="#cb19-29"></a><span class="do">## 11 Sudeste       1991  0.522</span></span>
-<span id="cb19-30"><a href="#cb19-30"></a><span class="do">## 12 Nordeste      1991  0.517</span></span>
-<span id="cb19-31"><a href="#cb19-31"></a><span class="do">## 13 Centro-Oeste  2010  0.495</span></span>
-<span id="cb19-32"><a href="#cb19-32"></a><span class="do">## 14 Sudeste       2010  0.466</span></span>
-<span id="cb19-33"><a href="#cb19-33"></a><span class="do">## 15 Sul           2010  0.460</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="|2|3-5|6-8|9-11|12-14|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Agregacao por gupo</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>  <span class="fu">select</span>(</span>
+<span id="cb18-4"><a href="#cb18-4"></a>    ano, regiao, gini</span>
+<span id="cb18-5"><a href="#cb18-5"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a>  <span class="fu">group_by</span>(</span>
+<span id="cb18-7"><a href="#cb18-7"></a>    regiao, ano</span>
+<span id="cb18-8"><a href="#cb18-8"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb18-9"><a href="#cb18-9"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb18-10"><a href="#cb18-10"></a>    <span class="at">m_gini =</span> <span class="fu">mean</span>(gini)</span>
+<span id="cb18-11"><a href="#cb18-11"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb18-12"><a href="#cb18-12"></a>  <span class="fu">arrange</span>(</span>
+<span id="cb18-13"><a href="#cb18-13"></a>    <span class="fu">desc</span>(m_gini)</span>
+<span id="cb18-14"><a href="#cb18-14"></a>  )</span>
+<span id="cb18-15"><a href="#cb18-15"></a><span class="do">## # A tibble: 15 × 3</span></span>
+<span id="cb18-16"><a href="#cb18-16"></a><span class="do">## # Groups:   regiao [5]</span></span>
+<span id="cb18-17"><a href="#cb18-17"></a><span class="do">##    regiao         ano m_gini</span></span>
+<span id="cb18-18"><a href="#cb18-18"></a><span class="do">##    &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;</span></span>
+<span id="cb18-19"><a href="#cb18-19"></a><span class="do">##  1 Norte         2000  0.599</span></span>
+<span id="cb18-20"><a href="#cb18-20"></a><span class="do">##  2 Norte         2010  0.568</span></span>
+<span id="cb18-21"><a href="#cb18-21"></a><span class="do">##  3 Nordeste      2000  0.562</span></span>
+<span id="cb18-22"><a href="#cb18-22"></a><span class="do">##  4 Centro-Oeste  2000  0.561</span></span>
+<span id="cb18-23"><a href="#cb18-23"></a><span class="do">##  5 Norte         1991  0.543</span></span>
+<span id="cb18-24"><a href="#cb18-24"></a><span class="do">##  6 Centro-Oeste  1991  0.541</span></span>
+<span id="cb18-25"><a href="#cb18-25"></a><span class="do">##  7 Sul           1991  0.531</span></span>
+<span id="cb18-26"><a href="#cb18-26"></a><span class="do">##  8 Sudeste       2000  0.530</span></span>
+<span id="cb18-27"><a href="#cb18-27"></a><span class="do">##  9 Nordeste      2010  0.525</span></span>
+<span id="cb18-28"><a href="#cb18-28"></a><span class="do">## 10 Sul           2000  0.524</span></span>
+<span id="cb18-29"><a href="#cb18-29"></a><span class="do">## 11 Sudeste       1991  0.522</span></span>
+<span id="cb18-30"><a href="#cb18-30"></a><span class="do">## 12 Nordeste      1991  0.517</span></span>
+<span id="cb18-31"><a href="#cb18-31"></a><span class="do">## 13 Centro-Oeste  2010  0.495</span></span>
+<span id="cb18-32"><a href="#cb18-32"></a><span class="do">## 14 Sudeste       2010  0.466</span></span>
+<span id="cb18-33"><a href="#cb18-33"></a><span class="do">## 15 Sul           2010  0.460</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="contando-elementos" class="slide level2">
@@ -1084,24 +1040,46 @@ Antonio Vinícius Barbosa
 <section id="contando-elementos-1" class="slide level2">
 <h2>Contando elementos</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="|2|3-5|6-8|9-11|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Numero de municipios distintos por ano</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
-<span id="cb20-3"><a href="#cb20-3"></a>  <span class="fu">select</span>(</span>
-<span id="cb20-4"><a href="#cb20-4"></a>    ano, muni</span>
-<span id="cb20-5"><a href="#cb20-5"></a>    ) <span class="sc">|&gt;</span> </span>
-<span id="cb20-6"><a href="#cb20-6"></a>  <span class="fu">filter</span>(</span>
-<span id="cb20-7"><a href="#cb20-7"></a>    ano <span class="sc">==</span> <span class="dv">1991</span></span>
-<span id="cb20-8"><a href="#cb20-8"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb20-9"><a href="#cb20-9"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb20-10"><a href="#cb20-10"></a>    <span class="at">n_municipios =</span> <span class="fu">n</span>()</span>
-<span id="cb20-11"><a href="#cb20-11"></a>    )</span>
-<span id="cb20-12"><a href="#cb20-12"></a><span class="do">## # A tibble: 1 × 1</span></span>
-<span id="cb20-13"><a href="#cb20-13"></a><span class="do">##   n_municipios</span></span>
-<span id="cb20-14"><a href="#cb20-14"></a><span class="do">##          &lt;int&gt;</span></span>
-<span id="cb20-15"><a href="#cb20-15"></a><span class="do">## 1         5562</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="|2|3-5|6-8|9-11|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Numero de municipios distintos por ano</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">select</span>(</span>
+<span id="cb19-4"><a href="#cb19-4"></a>    ano, muni</span>
+<span id="cb19-5"><a href="#cb19-5"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb19-6"><a href="#cb19-6"></a>  <span class="fu">filter</span>(</span>
+<span id="cb19-7"><a href="#cb19-7"></a>    ano <span class="sc">==</span> <span class="dv">1991</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb19-9"><a href="#cb19-9"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb19-10"><a href="#cb19-10"></a>    <span class="at">n_municipios =</span> <span class="fu">n</span>()</span>
+<span id="cb19-11"><a href="#cb19-11"></a>    )</span>
+<span id="cb19-12"><a href="#cb19-12"></a><span class="do">## # A tibble: 1 × 1</span></span>
+<span id="cb19-13"><a href="#cb19-13"></a><span class="do">##   n_municipios</span></span>
+<span id="cb19-14"><a href="#cb19-14"></a><span class="do">##          &lt;int&gt;</span></span>
+<span id="cb19-15"><a href="#cb19-15"></a><span class="do">## 1         5562</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="contando-elementos-2" class="slide level2">
+<h2>Contando elementos</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="|2|3-5|6-8|9-11|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Numero de municipios distintos por ano</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>  <span class="fu">select</span>(</span>
+<span id="cb20-4"><a href="#cb20-4"></a>    ano, muni, uf</span>
+<span id="cb20-5"><a href="#cb20-5"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a>  <span class="fu">group_by</span>(</span>
+<span id="cb20-7"><a href="#cb20-7"></a>    ano</span>
+<span id="cb20-8"><a href="#cb20-8"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb20-9"><a href="#cb20-9"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb20-10"><a href="#cb20-10"></a>    <span class="at">n_municipios =</span> <span class="fu">n_distinct</span>(muni)</span>
+<span id="cb20-11"><a href="#cb20-11"></a>    )</span>
+<span id="cb20-12"><a href="#cb20-12"></a><span class="do">## # A tibble: 3 × 2</span></span>
+<span id="cb20-13"><a href="#cb20-13"></a><span class="do">##     ano n_municipios</span></span>
+<span id="cb20-14"><a href="#cb20-14"></a><span class="do">##   &lt;dbl&gt;        &lt;int&gt;</span></span>
+<span id="cb20-15"><a href="#cb20-15"></a><span class="do">## 1  1991         5327</span></span>
+<span id="cb20-16"><a href="#cb20-16"></a><span class="do">## 2  2000         5327</span></span>
+<span id="cb20-17"><a href="#cb20-17"></a><span class="do">## 3  2010         5327</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="contando-elementos-3" class="slide level2">
 <h2>Contando elementos</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21" data-code-line-numbers="|2|3-5|6-8|9-11|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Numero de municipios distintos por ano</span></span>
@@ -1113,68 +1091,46 @@ Antonio Vinícius Barbosa
 <span id="cb21-7"><a href="#cb21-7"></a>    ano</span>
 <span id="cb21-8"><a href="#cb21-8"></a>    ) <span class="sc">|&gt;</span> </span>
 <span id="cb21-9"><a href="#cb21-9"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb21-10"><a href="#cb21-10"></a>    <span class="at">n_municipios =</span> <span class="fu">n_distinct</span>(muni)</span>
+<span id="cb21-10"><a href="#cb21-10"></a>    <span class="at">n_municipios =</span> <span class="fu">n_distinct</span>(uf, muni)</span>
 <span id="cb21-11"><a href="#cb21-11"></a>    )</span>
 <span id="cb21-12"><a href="#cb21-12"></a><span class="do">## # A tibble: 3 × 2</span></span>
 <span id="cb21-13"><a href="#cb21-13"></a><span class="do">##     ano n_municipios</span></span>
 <span id="cb21-14"><a href="#cb21-14"></a><span class="do">##   &lt;dbl&gt;        &lt;int&gt;</span></span>
-<span id="cb21-15"><a href="#cb21-15"></a><span class="do">## 1  1991         5327</span></span>
-<span id="cb21-16"><a href="#cb21-16"></a><span class="do">## 2  2000         5327</span></span>
-<span id="cb21-17"><a href="#cb21-17"></a><span class="do">## 3  2010         5327</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="contando-elementos-3" class="slide level2">
-<h2>Contando elementos</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="|2|3-5|6-8|9-11|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Numero de municipios distintos por ano</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
-<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">select</span>(</span>
-<span id="cb22-4"><a href="#cb22-4"></a>    ano, muni, uf</span>
-<span id="cb22-5"><a href="#cb22-5"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb22-6"><a href="#cb22-6"></a>  <span class="fu">group_by</span>(</span>
-<span id="cb22-7"><a href="#cb22-7"></a>    ano</span>
-<span id="cb22-8"><a href="#cb22-8"></a>    ) <span class="sc">|&gt;</span> </span>
-<span id="cb22-9"><a href="#cb22-9"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb22-10"><a href="#cb22-10"></a>    <span class="at">n_municipios =</span> <span class="fu">n_distinct</span>(uf, muni)</span>
-<span id="cb22-11"><a href="#cb22-11"></a>    )</span>
-<span id="cb22-12"><a href="#cb22-12"></a><span class="do">## # A tibble: 3 × 2</span></span>
-<span id="cb22-13"><a href="#cb22-13"></a><span class="do">##     ano n_municipios</span></span>
-<span id="cb22-14"><a href="#cb22-14"></a><span class="do">##   &lt;dbl&gt;        &lt;int&gt;</span></span>
-<span id="cb22-15"><a href="#cb22-15"></a><span class="do">## 1  1991         5562</span></span>
-<span id="cb22-16"><a href="#cb22-16"></a><span class="do">## 2  2000         5562</span></span>
-<span id="cb22-17"><a href="#cb22-17"></a><span class="do">## 3  2010         5562</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-15"><a href="#cb21-15"></a><span class="do">## 1  1991         5562</span></span>
+<span id="cb21-16"><a href="#cb21-16"></a><span class="do">## 2  2000         5562</span></span>
+<span id="cb21-17"><a href="#cb21-17"></a><span class="do">## 3  2010         5562</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="contando-elementos-4" class="slide level2">
 <h2>Contando elementos</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23" data-code-line-numbers="|2|3-5|6-8|9-11|12|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Contando elementos por grupo</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">select</span>(</span>
-<span id="cb23-4"><a href="#cb23-4"></a>    ano, uf, regiao, gini</span>
-<span id="cb23-5"><a href="#cb23-5"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb23-6"><a href="#cb23-6"></a>  <span class="fu">filter</span>(</span>
-<span id="cb23-7"><a href="#cb23-7"></a>    ano <span class="sc">==</span> <span class="dv">2010</span></span>
-<span id="cb23-8"><a href="#cb23-8"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb23-9"><a href="#cb23-9"></a>  <span class="fu">group_by</span>(</span>
-<span id="cb23-10"><a href="#cb23-10"></a>    uf</span>
-<span id="cb23-11"><a href="#cb23-11"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb23-12"><a href="#cb23-12"></a>  <span class="fu">count</span>()</span>
-<span id="cb23-13"><a href="#cb23-13"></a><span class="do">## # A tibble: 27 × 2</span></span>
-<span id="cb23-14"><a href="#cb23-14"></a><span class="do">## # Groups:   uf [27]</span></span>
-<span id="cb23-15"><a href="#cb23-15"></a><span class="do">##    uf        n</span></span>
-<span id="cb23-16"><a href="#cb23-16"></a><span class="do">##    &lt;chr&gt; &lt;int&gt;</span></span>
-<span id="cb23-17"><a href="#cb23-17"></a><span class="do">##  1 AC       22</span></span>
-<span id="cb23-18"><a href="#cb23-18"></a><span class="do">##  2 AL      102</span></span>
-<span id="cb23-19"><a href="#cb23-19"></a><span class="do">##  3 AM       62</span></span>
-<span id="cb23-20"><a href="#cb23-20"></a><span class="do">##  4 AP       16</span></span>
-<span id="cb23-21"><a href="#cb23-21"></a><span class="do">##  5 BA      417</span></span>
-<span id="cb23-22"><a href="#cb23-22"></a><span class="do">##  6 CE      184</span></span>
-<span id="cb23-23"><a href="#cb23-23"></a><span class="do">##  7 DF        1</span></span>
-<span id="cb23-24"><a href="#cb23-24"></a><span class="do">##  8 ES       78</span></span>
-<span id="cb23-25"><a href="#cb23-25"></a><span class="do">##  9 GO      245</span></span>
-<span id="cb23-26"><a href="#cb23-26"></a><span class="do">## 10 MA      217</span></span>
-<span id="cb23-27"><a href="#cb23-27"></a><span class="do">## # ℹ 17 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="|2|3-5|6-8|9-11|12|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Contando elementos por grupo</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">select</span>(</span>
+<span id="cb22-4"><a href="#cb22-4"></a>    ano, uf, regiao, gini</span>
+<span id="cb22-5"><a href="#cb22-5"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a>  <span class="fu">filter</span>(</span>
+<span id="cb22-7"><a href="#cb22-7"></a>    ano <span class="sc">==</span> <span class="dv">2010</span></span>
+<span id="cb22-8"><a href="#cb22-8"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb22-9"><a href="#cb22-9"></a>  <span class="fu">group_by</span>(</span>
+<span id="cb22-10"><a href="#cb22-10"></a>    uf</span>
+<span id="cb22-11"><a href="#cb22-11"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb22-12"><a href="#cb22-12"></a>  <span class="fu">count</span>()</span>
+<span id="cb22-13"><a href="#cb22-13"></a><span class="do">## # A tibble: 27 × 2</span></span>
+<span id="cb22-14"><a href="#cb22-14"></a><span class="do">## # Groups:   uf [27]</span></span>
+<span id="cb22-15"><a href="#cb22-15"></a><span class="do">##    uf        n</span></span>
+<span id="cb22-16"><a href="#cb22-16"></a><span class="do">##    &lt;chr&gt; &lt;int&gt;</span></span>
+<span id="cb22-17"><a href="#cb22-17"></a><span class="do">##  1 AC       22</span></span>
+<span id="cb22-18"><a href="#cb22-18"></a><span class="do">##  2 AL      102</span></span>
+<span id="cb22-19"><a href="#cb22-19"></a><span class="do">##  3 AM       62</span></span>
+<span id="cb22-20"><a href="#cb22-20"></a><span class="do">##  4 AP       16</span></span>
+<span id="cb22-21"><a href="#cb22-21"></a><span class="do">##  5 BA      417</span></span>
+<span id="cb22-22"><a href="#cb22-22"></a><span class="do">##  6 CE      184</span></span>
+<span id="cb22-23"><a href="#cb22-23"></a><span class="do">##  7 DF        1</span></span>
+<span id="cb22-24"><a href="#cb22-24"></a><span class="do">##  8 ES       78</span></span>
+<span id="cb22-25"><a href="#cb22-25"></a><span class="do">##  9 GO      245</span></span>
+<span id="cb22-26"><a href="#cb22-26"></a><span class="do">## 10 MA      217</span></span>
+<span id="cb22-27"><a href="#cb22-27"></a><span class="do">## # ℹ 17 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-2" class="slide level2" data-background-image="https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/ed07d56b-c5c8-43af-84be-5bcab97eca75_rw_1920.png?h=b58505e05aa7e9cb9e417dc66762728b" data-background-size="cover">
@@ -1184,28 +1140,28 @@ Antonio Vinícius Barbosa
 <h2>Renomeando variáveis com <code>rename()</code></h2>
 <p>Para <strong>renomear</strong> variáveis, utilizamos a função <code>rename()</code>, com a sintaxe dada por <code>rename(nome_novo = nome_antigo)</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24" data-code-line-numbers="|2|3-5|6-8|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Renomeando variaveis</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">select</span>(</span>
-<span id="cb24-4"><a href="#cb24-4"></a>    ano, regiao, gini</span>
-<span id="cb24-5"><a href="#cb24-5"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb24-6"><a href="#cb24-6"></a>  <span class="fu">rename</span>(</span>
-<span id="cb24-7"><a href="#cb24-7"></a>    <span class="at">regiao_br =</span> regiao, <span class="at">ind_gini =</span> gini</span>
-<span id="cb24-8"><a href="#cb24-8"></a>  )</span>
-<span id="cb24-9"><a href="#cb24-9"></a><span class="do">## # A tibble: 16,686 × 3</span></span>
-<span id="cb24-10"><a href="#cb24-10"></a><span class="do">##      ano regiao_br ind_gini</span></span>
-<span id="cb24-11"><a href="#cb24-11"></a><span class="do">##    &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;</span></span>
-<span id="cb24-12"><a href="#cb24-12"></a><span class="do">##  1  1991 Norte         0.63</span></span>
-<span id="cb24-13"><a href="#cb24-13"></a><span class="do">##  2  1991 Norte         0.57</span></span>
-<span id="cb24-14"><a href="#cb24-14"></a><span class="do">##  3  1991 Norte         0.7 </span></span>
-<span id="cb24-15"><a href="#cb24-15"></a><span class="do">##  4  1991 Norte         0.66</span></span>
-<span id="cb24-16"><a href="#cb24-16"></a><span class="do">##  5  1991 Norte         0.6 </span></span>
-<span id="cb24-17"><a href="#cb24-17"></a><span class="do">##  6  1991 Norte         0.62</span></span>
-<span id="cb24-18"><a href="#cb24-18"></a><span class="do">##  7  1991 Norte         0.59</span></span>
-<span id="cb24-19"><a href="#cb24-19"></a><span class="do">##  8  1991 Norte         0.65</span></span>
-<span id="cb24-20"><a href="#cb24-20"></a><span class="do">##  9  1991 Norte         0.63</span></span>
-<span id="cb24-21"><a href="#cb24-21"></a><span class="do">## 10  1991 Norte         0.6 </span></span>
-<span id="cb24-22"><a href="#cb24-22"></a><span class="do">## # ℹ 16,676 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23" data-code-line-numbers="|2|3-5|6-8|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Renomeando variaveis</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>pnud_mun <span class="sc">|&gt;</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">select</span>(</span>
+<span id="cb23-4"><a href="#cb23-4"></a>    ano, regiao, gini</span>
+<span id="cb23-5"><a href="#cb23-5"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a>  <span class="fu">rename</span>(</span>
+<span id="cb23-7"><a href="#cb23-7"></a>    <span class="at">regiao_br =</span> regiao, <span class="at">ind_gini =</span> gini</span>
+<span id="cb23-8"><a href="#cb23-8"></a>  )</span>
+<span id="cb23-9"><a href="#cb23-9"></a><span class="do">## # A tibble: 16,686 × 3</span></span>
+<span id="cb23-10"><a href="#cb23-10"></a><span class="do">##      ano regiao_br ind_gini</span></span>
+<span id="cb23-11"><a href="#cb23-11"></a><span class="do">##    &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;</span></span>
+<span id="cb23-12"><a href="#cb23-12"></a><span class="do">##  1  1991 Norte         0.63</span></span>
+<span id="cb23-13"><a href="#cb23-13"></a><span class="do">##  2  1991 Norte         0.57</span></span>
+<span id="cb23-14"><a href="#cb23-14"></a><span class="do">##  3  1991 Norte         0.7 </span></span>
+<span id="cb23-15"><a href="#cb23-15"></a><span class="do">##  4  1991 Norte         0.66</span></span>
+<span id="cb23-16"><a href="#cb23-16"></a><span class="do">##  5  1991 Norte         0.6 </span></span>
+<span id="cb23-17"><a href="#cb23-17"></a><span class="do">##  6  1991 Norte         0.62</span></span>
+<span id="cb23-18"><a href="#cb23-18"></a><span class="do">##  7  1991 Norte         0.59</span></span>
+<span id="cb23-19"><a href="#cb23-19"></a><span class="do">##  8  1991 Norte         0.65</span></span>
+<span id="cb23-20"><a href="#cb23-20"></a><span class="do">##  9  1991 Norte         0.63</span></span>
+<span id="cb23-21"><a href="#cb23-21"></a><span class="do">## 10  1991 Norte         0.6 </span></span>
+<span id="cb23-22"><a href="#cb23-22"></a><span class="do">## # ℹ 16,676 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="usando-if_else" class="slide level2">
@@ -1217,40 +1173,40 @@ Antonio Vinícius Barbosa
 <h2>Usando <code>if_else()</code></h2>
 <p>Por exemplo, considere que desejamos criar uma variável indicando se a expectativa de vida é <em>alta</em> ou <em>baixa</em> baseado na média da expectativa de vida:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Criando variaveis baseado em uma condicao</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a>media_espvida_2010 <span class="ot">&lt;-</span> pnud_mun <span class="sc">|&gt;</span> </span>
-<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">filter</span>(</span>
-<span id="cb25-4"><a href="#cb25-4"></a>    ano <span class="sc">==</span> <span class="dv">2010</span></span>
-<span id="cb25-5"><a href="#cb25-5"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb25-6"><a href="#cb25-6"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb25-7"><a href="#cb25-7"></a>    <span class="at">m_esp_vida =</span> <span class="fu">mean</span>(espvida)</span>
-<span id="cb25-8"><a href="#cb25-8"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb25-9"><a href="#cb25-9"></a>  <span class="fu">pull</span>()</span>
-<span id="cb25-10"><a href="#cb25-10"></a></span>
-<span id="cb25-11"><a href="#cb25-11"></a>pnud_mun <span class="sc">|&gt;</span></span>
-<span id="cb25-12"><a href="#cb25-12"></a>  <span class="fu">filter</span>(</span>
-<span id="cb25-13"><a href="#cb25-13"></a>    ano <span class="sc">==</span> <span class="dv">2010</span></span>
-<span id="cb25-14"><a href="#cb25-14"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb25-15"><a href="#cb25-15"></a>  <span class="fu">select</span>(</span>
-<span id="cb25-16"><a href="#cb25-16"></a>    muni, uf, espvida</span>
-<span id="cb25-17"><a href="#cb25-17"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb25-18"><a href="#cb25-18"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb25-19"><a href="#cb25-19"></a>    <span class="at">ind_espvida =</span> <span class="fu">if_else</span>(espvida <span class="sc">&gt;=</span> media_espvida_2010, <span class="st">"alta"</span>, <span class="st">"baixa"</span>)</span>
-<span id="cb25-20"><a href="#cb25-20"></a>  )</span>
-<span id="cb25-21"><a href="#cb25-21"></a><span class="do">## # A tibble: 5,562 × 4</span></span>
-<span id="cb25-22"><a href="#cb25-22"></a><span class="do">##    muni                  uf    espvida ind_espvida</span></span>
-<span id="cb25-23"><a href="#cb25-23"></a><span class="do">##    &lt;chr&gt;                 &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;      </span></span>
-<span id="cb25-24"><a href="#cb25-24"></a><span class="do">##  1 ALTA FLORESTA D'OESTE RO       70.8 baixa      </span></span>
-<span id="cb25-25"><a href="#cb25-25"></a><span class="do">##  2 ARIQUEMES             RO       73.4 alta       </span></span>
-<span id="cb25-26"><a href="#cb25-26"></a><span class="do">##  3 CABIXI                RO       70.4 baixa      </span></span>
-<span id="cb25-27"><a href="#cb25-27"></a><span class="do">##  4 CACOAL                RO       74.3 alta       </span></span>
-<span id="cb25-28"><a href="#cb25-28"></a><span class="do">##  5 CEREJEIRAS            RO       72.9 baixa      </span></span>
-<span id="cb25-29"><a href="#cb25-29"></a><span class="do">##  6 COLORADO DO OESTE     RO       73.8 alta       </span></span>
-<span id="cb25-30"><a href="#cb25-30"></a><span class="do">##  7 CORUMBIARA            RO       71.4 baixa      </span></span>
-<span id="cb25-31"><a href="#cb25-31"></a><span class="do">##  8 COSTA MARQUES         RO       70.0 baixa      </span></span>
-<span id="cb25-32"><a href="#cb25-32"></a><span class="do">##  9 ESPIGÃO D'OESTE       RO       74.2 alta       </span></span>
-<span id="cb25-33"><a href="#cb25-33"></a><span class="do">## 10 GUAJARÁ-MIRIM         RO       74.4 alta       </span></span>
-<span id="cb25-34"><a href="#cb25-34"></a><span class="do">## # ℹ 5,552 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Criando variaveis baseado em uma condicao</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>media_espvida_2010 <span class="ot">&lt;-</span> pnud_mun <span class="sc">|&gt;</span> </span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">filter</span>(</span>
+<span id="cb24-4"><a href="#cb24-4"></a>    ano <span class="sc">==</span> <span class="dv">2010</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb24-6"><a href="#cb24-6"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb24-7"><a href="#cb24-7"></a>    <span class="at">m_esp_vida =</span> <span class="fu">mean</span>(espvida)</span>
+<span id="cb24-8"><a href="#cb24-8"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb24-9"><a href="#cb24-9"></a>  <span class="fu">pull</span>()</span>
+<span id="cb24-10"><a href="#cb24-10"></a></span>
+<span id="cb24-11"><a href="#cb24-11"></a>pnud_mun <span class="sc">|&gt;</span></span>
+<span id="cb24-12"><a href="#cb24-12"></a>  <span class="fu">filter</span>(</span>
+<span id="cb24-13"><a href="#cb24-13"></a>    ano <span class="sc">==</span> <span class="dv">2010</span></span>
+<span id="cb24-14"><a href="#cb24-14"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb24-15"><a href="#cb24-15"></a>  <span class="fu">select</span>(</span>
+<span id="cb24-16"><a href="#cb24-16"></a>    muni, uf, espvida</span>
+<span id="cb24-17"><a href="#cb24-17"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb24-18"><a href="#cb24-18"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb24-19"><a href="#cb24-19"></a>    <span class="at">ind_espvida =</span> <span class="fu">if_else</span>(espvida <span class="sc">&gt;=</span> media_espvida_2010, <span class="st">"alta"</span>, <span class="st">"baixa"</span>)</span>
+<span id="cb24-20"><a href="#cb24-20"></a>  )</span>
+<span id="cb24-21"><a href="#cb24-21"></a><span class="do">## # A tibble: 5,562 × 4</span></span>
+<span id="cb24-22"><a href="#cb24-22"></a><span class="do">##    muni                  uf    espvida ind_espvida</span></span>
+<span id="cb24-23"><a href="#cb24-23"></a><span class="do">##    &lt;chr&gt;                 &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;      </span></span>
+<span id="cb24-24"><a href="#cb24-24"></a><span class="do">##  1 ALTA FLORESTA D'OESTE RO       70.8 baixa      </span></span>
+<span id="cb24-25"><a href="#cb24-25"></a><span class="do">##  2 ARIQUEMES             RO       73.4 alta       </span></span>
+<span id="cb24-26"><a href="#cb24-26"></a><span class="do">##  3 CABIXI                RO       70.4 baixa      </span></span>
+<span id="cb24-27"><a href="#cb24-27"></a><span class="do">##  4 CACOAL                RO       74.3 alta       </span></span>
+<span id="cb24-28"><a href="#cb24-28"></a><span class="do">##  5 CEREJEIRAS            RO       72.9 baixa      </span></span>
+<span id="cb24-29"><a href="#cb24-29"></a><span class="do">##  6 COLORADO DO OESTE     RO       73.8 alta       </span></span>
+<span id="cb24-30"><a href="#cb24-30"></a><span class="do">##  7 CORUMBIARA            RO       71.4 baixa      </span></span>
+<span id="cb24-31"><a href="#cb24-31"></a><span class="do">##  8 COSTA MARQUES         RO       70.0 baixa      </span></span>
+<span id="cb24-32"><a href="#cb24-32"></a><span class="do">##  9 ESPIGÃO D'OESTE       RO       74.2 alta       </span></span>
+<span id="cb24-33"><a href="#cb24-33"></a><span class="do">## 10 GUAJARÁ-MIRIM         RO       74.4 alta       </span></span>
+<span id="cb24-34"><a href="#cb24-34"></a><span class="do">## # ℹ 5,552 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-3" class="slide level2" data-background-image="https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/6ffcd6d6-c783-4087-ae76-99aa851663ed_rw_1920.png?h=5f67935d69c92e1fda9074d00dfea972" data-background-size="1500px">
@@ -1260,31 +1216,31 @@ Antonio Vinícius Barbosa
 <h2>A função <code>case_when</code></h2>
 <p>A função <code>case_when()</code> permite vetorizar múltiplas operações condicionais do tipo <code>if_else</code>. Neste caso, permite criar várias categorias:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>pnud_mun <span class="sc">|&gt;</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a>  <span class="fu">select</span>(</span>
-<span id="cb26-3"><a href="#cb26-3"></a>    ano, regiao, gini</span>
-<span id="cb26-4"><a href="#cb26-4"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb26-5"><a href="#cb26-5"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb26-6"><a href="#cb26-6"></a>    <span class="at">concentracao =</span> <span class="fu">case_when</span>(</span>
-<span id="cb26-7"><a href="#cb26-7"></a>      gini <span class="sc">&lt;</span> <span class="fl">0.4</span> <span class="sc">~</span> <span class="st">"baixa"</span>,</span>
-<span id="cb26-8"><a href="#cb26-8"></a>      gini <span class="sc">&gt;=</span> <span class="fl">0.4</span> <span class="sc">&amp;</span> gini <span class="sc">&lt;</span> <span class="fl">0.6</span> <span class="sc">~</span> <span class="st">"média"</span>,</span>
-<span id="cb26-9"><a href="#cb26-9"></a>      gini <span class="sc">&gt;=</span> <span class="fl">0.6</span> <span class="sc">~</span> <span class="st">"alta"</span></span>
-<span id="cb26-10"><a href="#cb26-10"></a>    )</span>
-<span id="cb26-11"><a href="#cb26-11"></a>  )</span>
-<span id="cb26-12"><a href="#cb26-12"></a><span class="do">## # A tibble: 16,686 × 4</span></span>
-<span id="cb26-13"><a href="#cb26-13"></a><span class="do">##      ano regiao  gini concentracao</span></span>
-<span id="cb26-14"><a href="#cb26-14"></a><span class="do">##    &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;       </span></span>
-<span id="cb26-15"><a href="#cb26-15"></a><span class="do">##  1  1991 Norte   0.63 alta        </span></span>
-<span id="cb26-16"><a href="#cb26-16"></a><span class="do">##  2  1991 Norte   0.57 média       </span></span>
-<span id="cb26-17"><a href="#cb26-17"></a><span class="do">##  3  1991 Norte   0.7  alta        </span></span>
-<span id="cb26-18"><a href="#cb26-18"></a><span class="do">##  4  1991 Norte   0.66 alta        </span></span>
-<span id="cb26-19"><a href="#cb26-19"></a><span class="do">##  5  1991 Norte   0.6  alta        </span></span>
-<span id="cb26-20"><a href="#cb26-20"></a><span class="do">##  6  1991 Norte   0.62 alta        </span></span>
-<span id="cb26-21"><a href="#cb26-21"></a><span class="do">##  7  1991 Norte   0.59 média       </span></span>
-<span id="cb26-22"><a href="#cb26-22"></a><span class="do">##  8  1991 Norte   0.65 alta        </span></span>
-<span id="cb26-23"><a href="#cb26-23"></a><span class="do">##  9  1991 Norte   0.63 alta        </span></span>
-<span id="cb26-24"><a href="#cb26-24"></a><span class="do">## 10  1991 Norte   0.6  alta        </span></span>
-<span id="cb26-25"><a href="#cb26-25"></a><span class="do">## # ℹ 16,676 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>pnud_mun <span class="sc">|&gt;</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">select</span>(</span>
+<span id="cb25-3"><a href="#cb25-3"></a>    ano, regiao, gini</span>
+<span id="cb25-4"><a href="#cb25-4"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb25-6"><a href="#cb25-6"></a>    <span class="at">concentracao =</span> <span class="fu">case_when</span>(</span>
+<span id="cb25-7"><a href="#cb25-7"></a>      gini <span class="sc">&lt;</span> <span class="fl">0.4</span> <span class="sc">~</span> <span class="st">"baixa"</span>,</span>
+<span id="cb25-8"><a href="#cb25-8"></a>      gini <span class="sc">&gt;=</span> <span class="fl">0.4</span> <span class="sc">&amp;</span> gini <span class="sc">&lt;</span> <span class="fl">0.6</span> <span class="sc">~</span> <span class="st">"média"</span>,</span>
+<span id="cb25-9"><a href="#cb25-9"></a>      gini <span class="sc">&gt;=</span> <span class="fl">0.6</span> <span class="sc">~</span> <span class="st">"alta"</span></span>
+<span id="cb25-10"><a href="#cb25-10"></a>    )</span>
+<span id="cb25-11"><a href="#cb25-11"></a>  )</span>
+<span id="cb25-12"><a href="#cb25-12"></a><span class="do">## # A tibble: 16,686 × 4</span></span>
+<span id="cb25-13"><a href="#cb25-13"></a><span class="do">##      ano regiao  gini concentracao</span></span>
+<span id="cb25-14"><a href="#cb25-14"></a><span class="do">##    &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;       </span></span>
+<span id="cb25-15"><a href="#cb25-15"></a><span class="do">##  1  1991 Norte   0.63 alta        </span></span>
+<span id="cb25-16"><a href="#cb25-16"></a><span class="do">##  2  1991 Norte   0.57 média       </span></span>
+<span id="cb25-17"><a href="#cb25-17"></a><span class="do">##  3  1991 Norte   0.7  alta        </span></span>
+<span id="cb25-18"><a href="#cb25-18"></a><span class="do">##  4  1991 Norte   0.66 alta        </span></span>
+<span id="cb25-19"><a href="#cb25-19"></a><span class="do">##  5  1991 Norte   0.6  alta        </span></span>
+<span id="cb25-20"><a href="#cb25-20"></a><span class="do">##  6  1991 Norte   0.62 alta        </span></span>
+<span id="cb25-21"><a href="#cb25-21"></a><span class="do">##  7  1991 Norte   0.59 média       </span></span>
+<span id="cb25-22"><a href="#cb25-22"></a><span class="do">##  8  1991 Norte   0.65 alta        </span></span>
+<span id="cb25-23"><a href="#cb25-23"></a><span class="do">##  9  1991 Norte   0.63 alta        </span></span>
+<span id="cb25-24"><a href="#cb25-24"></a><span class="do">## 10  1991 Norte   0.6  alta        </span></span>
+<span id="cb25-25"><a href="#cb25-25"></a><span class="do">## # ℹ 16,676 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="mais-sobre-dplyr" class="slide level2">
