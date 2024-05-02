@@ -613,7 +613,7 @@ knitr::kable(
 Para outras opções de costumização das tabelas, é recomendado o pacote `kableExtra`
 
 
-# <font color="1b5299"> Apresentações </font> {background-color="#BBDEF0"}
+#  Apresentações
 
 
 ## Apresentações
@@ -975,7 +975,7 @@ format:
 
 
 
-# <font color="1b5299"> Publicação </font> {background-color="#BBDEF0"}
+#  Publicação </font>
 
 
 ## `Quarto Pub`
@@ -999,7 +999,7 @@ quarto publish quarto-pub
 Após isso, é necessário adicionar o login e senha cadastrados.
 
 
-# <font color="1b5299"> Galeria </font> {background-color="#BBDEF0"}
+# Galeria </font>
 
 ## Galeria
 
