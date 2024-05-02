@@ -38,7 +38,7 @@ Atualmente, o `quarto` é a ferramenta mais completa para gerar documentos dinâ
 
 ![](https://www.rebeccabarter.com/blog/img/quarto/quarto.jpg){fig-align="center" width="800"}
 
-# <font color="1b5299"> `quarto` </font> {background-color="#BBDEF0"}
+# `quarto` 
 
 ## `quarto`
 
@@ -612,7 +612,6 @@ knitr::kable(
 
 Para outras opções de costumização das tabelas, é recomendado o pacote `kableExtra`
 
-Mais adiante veremos as funcionalidades do pacote `gt`.
 
 # <font color="1b5299"> Apresentações </font> {background-color="#BBDEF0"}
 
