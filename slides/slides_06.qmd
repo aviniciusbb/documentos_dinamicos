@@ -4,6 +4,7 @@ subtitle: Tópico VI - Documentos Dinâmicos
 format: thinkridentity-revealjs
 author: Antonio Vinícius Barbosa
 date: last-modified
+date-format: "DD-MM-YYYY"
 from: markdown+emoji
 ---
 
