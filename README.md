@@ -33,6 +33,10 @@ Esta disciplina tem como proposta introduzir as principais técnicas computacion
 6. [**Documentos dinâmicos**](https://raw.githack.com/aviniciusbb/documentos_dinamicos/main/slides/slides_06.html)
 
 
+## 🖨️ Projeto
+
+O roteiro do projeto está disponível neste [link](https://github.com/aviniciusbb/documentos_dinamicos/blob/master/projeto/Roteiro_Projeto_MESP.pdf).
+
 ## :link: Links
 
 - [Christian Burkhart tips](https://twitter.com/ChBurkhart)
