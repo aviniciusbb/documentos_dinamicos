@@ -30,7 +30,7 @@ Esta disciplina tem como proposta introduzir as principais técnicas computacion
 3. [**Manipulação de dados I**](https://raw.githack.com/aviniciusbb/documentos_dinamicos/main/slides/slides_03.html)
 4. [**Manipulação de dados II**](https://raw.githack.com/aviniciusbb/documentos_dinamicos/main/slides/slides_04.html)
 5. [**Visualização de dados**](https://raw.githack.com/aviniciusbb/documentos_dinamicos/main/slides/slides_05.html)
-6. [**Visualização de dados**](https://raw.githack.com/aviniciusbb/documentos_dinamicos/main/slides/slides_06.html)
+6. [**Documentos dinâmicos**](https://raw.githack.com/aviniciusbb/documentos_dinamicos/main/slides/slides_06.html)
 
 
 ## :link: Links
