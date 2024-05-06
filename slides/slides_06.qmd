@@ -596,8 +596,11 @@ Uma das formas de adicionar tabelas é através da função `kable` do pacote `k
 #| eval: false
 knitr::kable(
   dados::dados_starwars[1:5,1:5],
-  caption = "Personagens Starwars"
-  )
+  caption = "Personagens Starwars",
+  col.names = c("Personagem", "Altura (m)", "Massa (kg)", 
+                "Cor do cabelo", "Cor da pele"),
+   align = c("c", "r", "r", "l", "l")
+)
 ```
 
 ## Tabelas
@@ -607,8 +610,11 @@ knitr::kable(
 #| echo: false
 knitr::kable(
   dados::dados_starwars[1:5,1:5],
-  caption = "Personagens Starwars"
-  )
+  caption = "Personagens Starwars",
+  col.names = c("Personagem", "Altura (m)", "Massa (kg)", 
+                "Cor do cabelo", "Cor da pele"),
+   align = c("c", "r", "r", "l", "l")
+)
 ```
 
 Para outras opções de costumização das tabelas, é recomendado o pacote `kableExtra`

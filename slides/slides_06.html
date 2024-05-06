@@ -405,7 +405,7 @@ Antonio Vinícius Barbosa
 </div>
 </div>
 
-  <p class="date">02-05-2024</p>
+  <p class="date">06-05-2024</p>
 </section>
 <section>
 <section id="documentos-dinâmicos" class="title-slide slide level1 center">
@@ -896,8 +896,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
 <span id="cb31-2"><a href="#cb31-2"></a>  dados<span class="sc">::</span>dados_starwars[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>],</span>
-<span id="cb31-3"><a href="#cb31-3"></a>  <span class="at">caption =</span> <span class="st">"Personagens Starwars"</span></span>
-<span id="cb31-4"><a href="#cb31-4"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-3"><a href="#cb31-3"></a>  <span class="at">caption =</span> <span class="st">"Personagens Starwars"</span>,</span>
+<span id="cb31-4"><a href="#cb31-4"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Personagem"</span>, <span class="st">"Altura (m)"</span>, <span class="st">"Massa (kg)"</span>, </span>
+<span id="cb31-5"><a href="#cb31-5"></a>                <span class="st">"Cor do cabelo"</span>, <span class="st">"Cor da pele"</span>),</span>
+<span id="cb31-6"><a href="#cb31-6"></a>   <span class="at">align =</span> <span class="fu">c</span>(<span class="st">"c"</span>, <span class="st">"r"</span>, <span class="st">"r"</span>, <span class="st">"l"</span>, <span class="st">"l"</span>)</span>
+<span id="cb31-7"><a href="#cb31-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="tabelas-1" class="slide level2">
@@ -908,44 +911,44 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <caption>Personagens Starwars</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;">nome</th>
-<th style="text-align: right;">altura</th>
-<th style="text-align: right;">massa</th>
-<th style="text-align: left;">cor_do_cabelo</th>
-<th style="text-align: left;">cor_da_pele</th>
+<th style="text-align: center;">Personagem</th>
+<th style="text-align: right;">Altura (m)</th>
+<th style="text-align: right;">Massa (kg)</th>
+<th style="text-align: left;">Cor do cabelo</th>
+<th style="text-align: left;">Cor da pele</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Luke Skywalker</td>
+<td style="text-align: center;">Luke Skywalker</td>
 <td style="text-align: right;">172</td>
 <td style="text-align: right;">77</td>
 <td style="text-align: left;">Loiro</td>
 <td style="text-align: left;">Branca clara</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">C-3PO</td>
+<td style="text-align: center;">C-3PO</td>
 <td style="text-align: right;">167</td>
 <td style="text-align: right;">75</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">Ouro</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">R2-D2</td>
+<td style="text-align: center;">R2-D2</td>
 <td style="text-align: right;">96</td>
 <td style="text-align: right;">32</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">Branca, Azul</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Darth Vader</td>
+<td style="text-align: center;">Darth Vader</td>
 <td style="text-align: right;">202</td>
 <td style="text-align: right;">136</td>
 <td style="text-align: left;">Nenhum</td>
 <td style="text-align: left;">Branca</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Leia Organa</td>
+<td style="text-align: center;">Leia Organa</td>
 <td style="text-align: right;">150</td>
 <td style="text-align: right;">49</td>
 <td style="text-align: left;">Castanho</td>
@@ -1194,7 +1197,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_95310e4b" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_e962346a" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
