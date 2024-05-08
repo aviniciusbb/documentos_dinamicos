@@ -405,7 +405,7 @@ Antonio Vinícius Barbosa
 </div>
 </div>
 
-  <p class="date">06-05-2024</p>
+  <p class="date">08-05-2024</p>
 </section>
 <section>
 <section id="documentos-dinâmicos" class="title-slide slide level1 center">
@@ -1197,51 +1197,206 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_e962346a" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_f319338b" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="formatação-temas" class="title-slide slide level1 center">
+<h1>Formatação temas</h1>
+
+</section>
+<section id="formatação-de-temas" class="slide level2">
+<h2>Formatação de temas</h2>
+<ul>
+<li>Algo importante na construção de documentos é a formatação do estilo, também conhecido como <strong>temas</strong></li>
+<li>Os temas referem-se a composição de:
+<ul>
+<li>Cores</li>
+<li>Fontes</li>
+<li>Tamanhos</li>
+</ul></li>
+<li>A formatação depende do formato usado (<code>.html</code>, <code>.pdf</code>, <code>.pptx</code>)</li>
+</ul>
+</section>
+<section id="formatação-de-temas-1" class="slide level2">
+<h2>Formatação de temas</h2>
+<p>Para iniciar a formatação de temas, vamos iniciar com o documento padrão do <code>quarto</code>, adicionando o parâmetro <code>theme</code> no YAML:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb42-1"><a href="#cb42-1"></a>---</span>
+<span id="cb42-2"><a href="#cb42-2"></a>title: "Meu documento"</span>
+<span id="cb42-3"><a href="#cb42-3"></a>format: </span>
+<span id="cb42-4"><a href="#cb42-4"></a>  html:</span>
+<span id="cb42-5"><a href="#cb42-5"></a>    theme: united</span>
+<span id="cb42-6"><a href="#cb42-6"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Neste caso, utilizamos o tema <code>united</code>. Para uma lista de 25 temas personalizados, ver este <a href="https://quarto.org/docs/output-formats/html-themes.html">link</a>.</p>
+</section>
+<section id="formatação-de-temas-2" class="slide level2">
+<h2>Formatação de temas</h2>
+<p>Algumas opções básicas:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb43-1"><a href="#cb43-1"></a>---</span>
+<span id="cb43-2"><a href="#cb43-2"></a>title: "Meu documento"</span>
+<span id="cb43-3"><a href="#cb43-3"></a>format: </span>
+<span id="cb43-4"><a href="#cb43-4"></a>  html:</span>
+<span id="cb43-5"><a href="#cb43-5"></a>    theme: united</span>
+<span id="cb43-6"><a href="#cb43-6"></a>    fontsize: 1.5em</span>
+<span id="cb43-7"><a href="#cb43-7"></a>    mainfont: "Arial"</span>
+<span id="cb43-8"><a href="#cb43-8"></a>    fontcolor: "darkblue"</span>
+<span id="cb43-9"><a href="#cb43-9"></a>    linkcolor: "#FFF8E8"</span>
+<span id="cb43-10"><a href="#cb43-10"></a>    backgroundcolor: "white"</span>
+<span id="cb43-11"><a href="#cb43-11"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="gerando-pdf" class="slide level2">
 <h2>Gerando PDF</h2>
 <p>Para gerar arquivos PDF, é necessário instalar uma distribuição TeX. No terminal, fazer:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb42-1"><a href="#cb42-1"></a>quarto install tool tinytex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb44-1"><a href="#cb44-1"></a>quarto install tool tinytex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Uma vez instalado, ajustamos o formato do documento:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb43-1"><a href="#cb43-1"></a>---</span>
-<span id="cb43-2"><a href="#cb43-2"></a>format: pdf</span>
-<span id="cb43-3"><a href="#cb43-3"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb45-1"><a href="#cb45-1"></a>---</span>
+<span id="cb45-2"><a href="#cb45-2"></a>format: pdf</span>
+<span id="cb45-3"><a href="#cb45-3"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="opções-do-pdf" class="slide level2">
-<h2>Opções do PDF</h2>
+<section id="nome-do-autor-e-filiação" class="slide level2">
+<h2>Nome do autor e filiação</h2>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb46-1"><a href="#cb46-1"></a>---</span>
+<span id="cb46-2"><a href="#cb46-2"></a>author:</span>
+<span id="cb46-3"><a href="#cb46-3"></a>  name: Antonio Vinícius</span>
+<span id="cb46-4"><a href="#cb46-4"></a>  affiliation: Universidade Federal da Paraíba</span>
+<span id="cb46-5"><a href="#cb46-5"></a>  email: antonio.barbosa@academico.ufpb.br</span>
+<span id="cb46-6"><a href="#cb46-6"></a>format: pdf</span>
+<span id="cb46-7"><a href="#cb46-7"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="classe-do-documento" class="slide level2">
+<h2>Classe do documento</h2>
+<p>Para definir a classe do documento, utilizamos</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb47-1"><a href="#cb47-1"></a>---</span>
+<span id="cb47-2"><a href="#cb47-2"></a>format: </span>
+<span id="cb47-3"><a href="#cb47-3"></a>  pdf:</span>
+<span id="cb47-4"><a href="#cb47-4"></a>    documentclass: article</span>
+<span id="cb47-5"><a href="#cb47-5"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Outras opções mais comuns são:</p>
+<ul>
+<li><code>book</code></li>
+<li><code>report</code></li>
+<li><code>memoir</code></li>
+</ul>
+</section>
+<section id="resumo" class="slide level2">
+<h2>Resumo</h2>
+<p>Para adicionar sumário e demais opções, fazemos:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb48-1"><a href="#cb48-1"></a>---</span>
+<span id="cb48-2"><a href="#cb48-2"></a>abstract: Inserir resumo</span>
+<span id="cb48-3"><a href="#cb48-3"></a>keywords:</span>
+<span id="cb48-4"><a href="#cb48-4"></a>  - Palavra-chave 1</span>
+<span id="cb48-5"><a href="#cb48-5"></a>  - Palavra-chave 2</span>
+<span id="cb48-6"><a href="#cb48-6"></a>  - Palavra-chave 3</span>
+<span id="cb48-7"><a href="#cb48-7"></a>format: pdf </span>
+<span id="cb48-8"><a href="#cb48-8"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sumário" class="slide level2">
+<h2>Sumário</h2>
+<p>Para adicionar sumário e demais opções, fazemos:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb49-1"><a href="#cb49-1"></a>---</span>
+<span id="cb49-2"><a href="#cb49-2"></a>format: </span>
+<span id="cb49-3"><a href="#cb49-3"></a>  pdf:</span>
+<span id="cb49-4"><a href="#cb49-4"></a>    documentclass: article</span>
+<span id="cb49-5"><a href="#cb49-5"></a>    toc: true</span>
+<span id="cb49-6"><a href="#cb49-6"></a>    toc-depth: 2</span>
+<span id="cb49-7"><a href="#cb49-7"></a>    toc-title: Sumário</span>
+<span id="cb49-8"><a href="#cb49-8"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="lista-de-figuras-e-tabelas" class="slide level2">
+<h2>Lista de Figuras e Tabelas</h2>
+<p>Para adicionar listas de figuras e tabelas, fazemos:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb50-1"><a href="#cb50-1"></a>---</span>
+<span id="cb50-2"><a href="#cb50-2"></a>format: </span>
+<span id="cb50-3"><a href="#cb50-3"></a>  pdf:</span>
+<span id="cb50-4"><a href="#cb50-4"></a>    documentclass: article</span>
+<span id="cb50-5"><a href="#cb50-5"></a>    lof: true</span>
+<span id="cb50-6"><a href="#cb50-6"></a>    lot: true</span>
+<span id="cb50-7"><a href="#cb50-7"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="numerar-seções" class="slide level2">
+<h2>Numerar seções</h2>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb51-1"><a href="#cb51-1"></a>---</span>
+<span id="cb51-2"><a href="#cb51-2"></a>format: </span>
+<span id="cb51-3"><a href="#cb51-3"></a>  pdf:</span>
+<span id="cb51-4"><a href="#cb51-4"></a>    documentclass: article</span>
+<span id="cb51-5"><a href="#cb51-5"></a>    number-sections: true</span>
+<span id="cb51-6"><a href="#cb51-6"></a>    number-depth: 3</span>
+<span id="cb51-7"><a href="#cb51-7"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Caso não queiramos enumerar um seção específica, fazemos:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb52-1"><a href="#cb52-1"></a>### Minha seção {.unnumbered}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="outras-opções-de-formatação-do-pdf" class="slide level2">
+<h2>Outras opções de formatação do PDF</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb44-1"><a href="#cb44-1"></a>title: "Meu documento"</span>
-<span id="cb44-2"><a href="#cb44-2"></a>format: </span>
-<span id="cb44-3"><a href="#cb44-3"></a>  pdf: </span>
-<span id="cb44-4"><a href="#cb44-4"></a>    documentclass: report</span>
-<span id="cb44-5"><a href="#cb44-5"></a>    classoption: [twocolumn, landscape]</span>
-<span id="cb44-6"><a href="#cb44-6"></a>    lof: true</span>
-<span id="cb44-7"><a href="#cb44-7"></a>    lot: true</span>
-<span id="cb44-8"><a href="#cb44-8"></a>    geometry:</span>
-<span id="cb44-9"><a href="#cb44-9"></a>      - top=30mm</span>
-<span id="cb44-10"><a href="#cb44-10"></a>      - left=20mm</span>
-<span id="cb44-11"><a href="#cb44-11"></a>      - heightrounded</span>
-<span id="cb44-12"><a href="#cb44-12"></a>    fontfamily: libertinus</span>
-<span id="cb44-13"><a href="#cb44-13"></a>    colorlinks: true</span>
-<span id="cb44-14"><a href="#cb44-14"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb53-1"><a href="#cb53-1"></a>title: "Meu documento"</span>
+<span id="cb53-2"><a href="#cb53-2"></a>format: </span>
+<span id="cb53-3"><a href="#cb53-3"></a>  pdf: </span>
+<span id="cb53-4"><a href="#cb53-4"></a>    documentclass: report</span>
+<span id="cb53-5"><a href="#cb53-5"></a>    classoption: [twocolumn, landscape]</span>
+<span id="cb53-6"><a href="#cb53-6"></a>    geometry:</span>
+<span id="cb53-7"><a href="#cb53-7"></a>      - top=30mm</span>
+<span id="cb53-8"><a href="#cb53-8"></a>      - left=20mm</span>
+<span id="cb53-9"><a href="#cb53-9"></a>      - heightrounded</span>
+<span id="cb53-10"><a href="#cb53-10"></a>    fontfamily: libertinus</span>
+<span id="cb53-11"><a href="#cb53-11"></a>    colorlinks: true</span>
+<span id="cb53-12"><a href="#cb53-12"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:40%;">
 <ul>
 <li><code>documentclass</code>: classe do documento, como <em>article</em>, <em>report</em> ou <em>book</em></li>
 <li><code>classoption</code>: estrutura <em>onecolumn</em>/<em>twocolumn</em>, <em>portrait</em>/<em>landscape</em></li>
-<li><code>lof</code>-<code>lot</code>: lista de figuras e tabelas</li>
 <li><code>geometry</code>: recuo das margens</li>
 <li><code>fontfamily</code>: usar fontes do sistema. Ver lista completa em <code>systemfonts::system_fonts()</code></li>
 <li><code>colorlinks</code>: destacar links do texto</li>
 </ul>
 </div>
 </div>
+</section>
+<section id="citações" class="slide level2">
+<h2>Citações</h2>
+<p>Ao criar PDFs, podemos optar pelo <code>natbib</code> ou <code>BibLaTeX</code>, dois sistemas de gerenciamento de referências. É necessário criar um documento auxiliar com formato <code>.bib</code></p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb54-1"><a href="#cb54-1"></a>---</span>
+<span id="cb54-2"><a href="#cb54-2"></a>format: </span>
+<span id="cb54-3"><a href="#cb54-3"></a>  pdf:</span>
+<span id="cb54-4"><a href="#cb54-4"></a>    documentclass: article</span>
+<span id="cb54-5"><a href="#cb54-5"></a>    cite-method: biblatex</span>
+<span id="cb54-6"><a href="#cb54-6"></a>    bibliography: references.bib</span>
+<span id="cb54-7"><a href="#cb54-7"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<ul>
+<li>As citações ficam entre colchetes e são separadas por ponto e vírgula, como em <code>[@citacao]</code> - para citações em parênteses e <code>[- @citacao]</code> para citações na linha.</li>
+<li><code>[@citacao1; @citacao2]</code> é a sintaxe para múltiplas referências</li>
+<li>Cada citação deve possuir uma chave, composta por ‘@’ + o identificador de citação da base de dados</li>
+</ul>
+</div>
+</section>
+<section id="citações-1" class="slide level2">
+<h2>Citações</h2>
+<p>Para encontar a citação no formato <code>.bib</code>, podemos utilizar o <a href="https://scholar.google.com.br/">Google Acadêmico</a></p>
+
+<img data-src="images/citacao_1.png" class="r-stretch"></section>
+<section id="citações-2" class="slide level2">
+<h2>Citações</h2>
+<p>Para encontar a citação no formato <code>.bib</code>, podemos utilizar o <a href="https://scholar.google.com.br/">Google Acadêmico</a></p>
+
+<img data-src="images/citacao_2.png" class="r-stretch"><p>Agora, basta copiar o conteúdo para o arquivo <code>references.bib</code> e salvar.</p>
+</section>
+<section id="citações-3" class="slide level2">
+<h2>Citações</h2>
+<p>Por fim, basta adicionar o label da referência (primeira linha), como em:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb55-1"><a href="#cb55-1"></a>De acordo com [- @lowry1951protein], ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>E adicionar as referência no final do documento como uma seção</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb56-1"><a href="#cb56-1"></a>### References</span>
+<span id="cb56-2"><a href="#cb56-2"></a></span>
+<span id="cb56-3"><a href="#cb56-3"></a>::: {#refs}</span>
+<span id="cb56-4"><a href="#cb56-4"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Desta forma</p>
 </section></section>
 <section>
 <section id="publicação" class="title-slide slide level1 center">
@@ -1257,7 +1412,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <section id="quarto-pub-1" class="slide level2">
 <h2><code>Quarto Pub</code></h2>
 <p>Para publicar um conteúdo, é necessário criar um projeto no <code>RStudio</code>. Em seguida, digitar no Terminal</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb45-1"><a href="#cb45-1"></a>quarto publish quarto-pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb57-1"><a href="#cb57-1"></a>quarto publish quarto-pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Após isso, é necessário adicionar o login e senha cadastrados.</p>
 </section></section>
 <section>

@@ -922,6 +922,56 @@ countdown::countdown(
 ```
 
 
+# Formatação temas
+
+## Formatação de temas
+
+- Algo importante na construção de documentos é a formatação do estilo,
+também conhecido como **temas**
+- Os temas referem-se a composição de:
+  * Cores
+  * Fontes
+  * Tamanhos
+
+- A formatação depende do formato usado (`.html`, `.pdf`, `.pptx`)
+
+
+## Formatação de temas
+
+Para iniciar a formatação de temas, vamos iniciar com o documento padrão do
+`quarto`, adicionando o parâmetro `theme` no YAML:
+
+```{{r}}
+---
+title: "Meu documento"
+format: 
+  html:
+    theme: united
+---
+```
+
+Neste caso, utilizamos o tema `united`. Para uma lista de 25 temas personalizados, ver este [link](https://quarto.org/docs/output-formats/html-themes.html).
+
+
+## Formatação de temas
+
+Algumas opções básicas:
+
+```{{r}}
+---
+title: "Meu documento"
+format: 
+  html:
+    theme: united
+    fontsize: 1.5em
+    mainfont: "Arial"
+    fontcolor: "darkblue"
+    linkcolor: "#FFF8E8"
+    backgroundcolor: "white"
+---
+```
+
+
 
 ## Gerando PDF
 
@@ -943,7 +993,104 @@ format: pdf
 ````
 
 
-## Opções do PDF
+## Nome do autor e filiação
+
+````{{r}}
+---
+author:
+  name: Antonio Vinícius
+  affiliation: Universidade Federal da Paraíba
+  email: antonio.barbosa@academico.ufpb.br
+format: pdf
+---
+````
+
+## Classe do documento
+
+Para definir a classe do documento, utilizamos
+
+````{{r}}
+---
+format: 
+  pdf:
+    documentclass: article
+---
+````
+
+Outras opções mais comuns são: 
+
+- `book` 
+- `report`
+- `memoir`
+
+## Resumo
+
+Para adicionar sumário e demais opções, fazemos:
+
+````{{r}}
+---
+abstract: Inserir resumo
+keywords:
+  - Palavra-chave 1
+  - Palavra-chave 2
+  - Palavra-chave 3
+format: pdf 
+---
+````
+
+
+## Sumário
+
+Para adicionar sumário e demais opções, fazemos:
+
+````{{r}}
+---
+format: 
+  pdf:
+    documentclass: article
+    toc: true
+    toc-depth: 2
+    toc-title: Sumário
+---
+````
+
+
+## Lista de Figuras e Tabelas
+
+Para adicionar listas de figuras e tabelas, fazemos:
+
+````{{r}}
+---
+format: 
+  pdf:
+    documentclass: article
+    lof: true
+    lot: true
+---
+````
+
+## Numerar seções
+
+````{{r}}
+---
+format: 
+  pdf:
+    documentclass: article
+    number-sections: true
+    number-depth: 3
+---
+````
+
+. . .
+
+Caso não queiramos enumerar um seção específica, fazemos:
+
+````{{r}}
+### Minha seção {.unnumbered}
+````
+
+
+## Outras opções de formatação do PDF
 :::: {.columns}
 
 ::: {.column width="60%"}
@@ -953,8 +1100,6 @@ format:
   pdf: 
     documentclass: report
     classoption: [twocolumn, landscape]
-    lof: true
-    lot: true
     geometry:
       - top=30mm
       - left=20mm
@@ -971,7 +1116,6 @@ format:
 
 - `documentclass`: classe do documento, como *article*, *report* ou *book* 
 - `classoption`: estrutura *onecolumn*/*twocolumn*, *portrait*/*landscape* 
-- `lof`-`lot`: lista de figuras e tabelas
 - `geometry`: recuo das margens
 - `fontfamily`: usar fontes do sistema. Ver lista completa em `systemfonts::system_fonts()`
 - `colorlinks`: destacar links do texto
@@ -980,7 +1124,62 @@ format:
 
 ::::
 
+## Citações
 
+Ao criar PDFs, podemos optar pelo `natbib` ou `BibLaTeX`, dois sistemas de gerenciamento de referências. É necessário criar um documento auxiliar com formato `.bib`
+
+````{{r}}
+---
+format: 
+  pdf:
+    documentclass: article
+    cite-method: biblatex
+    bibliography: references.bib
+---
+````
+
+. . .
+
+- As citações ficam entre colchetes e são separadas por ponto e vírgula, como em `[@citacao]` - para citações em parênteses e `[- @citacao]` para citações na linha.
+- `[@citacao1; @citacao2]` é a sintaxe para múltiplas referências
+- Cada citação deve possuir uma chave, composta por '@' + o identificador de citação da base de dados
+
+
+## Citações
+
+Para encontar a citação no formato `.bib`, podemos utilizar o [Google Acadêmico](https://scholar.google.com.br/)
+
+![](images/citacao_1.png)
+
+## Citações
+
+Para encontar a citação no formato `.bib`, podemos utilizar o [Google Acadêmico](https://scholar.google.com.br/)
+
+![](images/citacao_2.png)
+
+Agora, basta copiar o conteúdo para o arquivo `references.bib` e salvar.
+
+
+## Citações
+
+Por fim, basta adicionar o label da referência (primeira linha), como em:
+
+````{{r}}
+De acordo com [- @lowry1951protein], ...
+````
+
+E adicionar as referência no final do documento como uma seção
+
+
+
+````{{r}}
+### References
+
+::: {#refs}
+:::
+````
+
+Desta forma
 
 #  Publicação </font>
 
